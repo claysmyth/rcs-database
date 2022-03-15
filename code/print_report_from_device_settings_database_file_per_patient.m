@@ -7,7 +7,7 @@ startTic = tic;
 
 %% load the database
 if isempty(varargin)
-    dropboxFolder = findFilesBVQX('/Users','Starr Lab Dropbox',struct('dirs',1,'depth',2));
+    dropboxFolder = findFilesBVQX('/media/dropbox_hdd','Starr Lab Dropbox',struct('dirs',1,'depth',2));
     if length(dropboxFolder) == 1
         dirname  = fullfile(dropboxFolder{1}, 'RC+S Patient Un-Synced Data');
     else

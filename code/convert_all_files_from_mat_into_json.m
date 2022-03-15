@@ -5,7 +5,7 @@ startTic = tic;
 
 
 % set destination folders
-dropboxFolder = findFilesBVQX('/Users','Starr Lab Dropbox',struct('dirs',1,'depth',2));
+dropboxFolder = findFilesBVQX('/media/storage1','Starr Lab Dropbox',struct('dirs',1,'depth',2));
 if length(dropboxFolder) == 1
     dirname  = fullfile(dropboxFolder{1}, 'RC+S Patient Un-Synced Data');
     rootdir_orig = '/Users/roee/Starr Lab Dropbox/';

@@ -7,7 +7,7 @@ rootdir_dest = fullfile(rootdir_orig,'RC+S Patient Un-Synced Data');
 
 
 if isempty(varargin)
-    dropboxFolder = findFilesBVQX('/Users','Starr Lab Dropbox',struct('dirs',1,'depth',2));
+    dropboxFolder = findFilesBVQX('/media/storage1','Starr Lab Dropbox',struct('dirs',1,'depth',2));
     if length(dropboxFolder) == 1
         dirname  = fullfile(dropboxFolder{1}, 'RC+S Patient Un-Synced Data');
     else
