@@ -1,0 +1,83 @@
+{
+    "comment": "Directory names for each RCS participant as key value pair. KEY = 'Tablet Synced Filepath': VALUE = 'Unsynced FilePath'",
+    "Patients": {
+        "RCS02L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RC02LTE/SummitData/SummitContinuousBilateralStreaming/RCS02L": "" 
+        },
+        "RCS02R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RC02LTE/SummitData/SummitContinuousBilateralStreaming/RCS02R": ""
+        },
+        "RCS03L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS03/SummitData/SummitContinuousBilateralStreaming/RCS03L": ""
+        },
+        "RCS03R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS03/SummitData/SummitContinuousBilateralStreaming/RCS03R": ""
+        },
+        "RCS04L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS04/SummitData/SummitContinuousBilateralStreaming/RCS04L": ""
+        },
+        "RCS04R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS04/SummitData/SummitContinuousBilateralStreaming/RCS04R": ""
+        },
+        "RCS05L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS05/SummitData/SummitContinuousBilateralStreaming/RCS05L": ""
+        },
+        "RCS05R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS05/SummitData/SummitContinuousBilateralStreaming/RCS05R": ""
+        },
+        "RCS06L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS06/SummitData/SummitContinuousBilateralStreaming/RCS06L": ""
+        },
+        "RCS06R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS06/SummitData/SummitContinuousBilateralStreaming/RCS06R": ""
+        },
+        "RCS07L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS07/SummitData/SummitContinuousBilateralStreaming/RCS07L": ""
+        },
+        "RCS07R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS07/SummitData/SummitContinuousBilateralStreaming/RCS07R": ""
+        },
+        "RCS08L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS08/SummitData/SummitContinuousBilateralStreaming/RCS08L": ""
+        },
+        "RCS08R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS08/SummitData/SummitContinuousBilateralStreaming/RCS08R": ""
+        },
+        "RCS09L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS09/SummitData/SummitContinuousBilateralStreaming/RCS09L": ""
+        },
+        "RCS09R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS09/SummitData/SummitContinuousBilateralStreaming/RCS09R": ""
+        },
+        "RCS10L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS10/SummitData/SummitContinuousBilateralStreaming/RCS10L": ""
+        },
+        "RCS10R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS10/SummitData/SummitContinuousBilateralStreaming/RCS10R": ""
+        },
+        "RCS11L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS11/SummitData/SummitContinuousBilateralStreaming/RCS11L": ""
+        },
+        "RCS11R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS11/SummitData/SummitContinuousBilateralStreaming/RCS11R": ""
+        },
+        "RCS12L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS12/SummitData/SummitContinuousBilateralStreaming/RCS12L": ""
+        },
+        "RCS12R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS12/SummitData/SummitContinuousBilateralStreaming/RCS12R": ""
+        },
+        "RCS13R": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS13/SummitData/SummitContinuousBilateralStreaming/RCS13R": ""
+        },
+        "RCS14L": {
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS14/SummitData/SummitContinuousBilateralStreaming/RCS14L": ""
+        },
+        "RCS15L":{
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS15/SummitData/SummitContinuousBilateralStreaming/RCS15L": ""
+        },
+        "RCS15R":{
+            "/media/dropbox_hdd/Starr Lab Dropbox/RCS15/SummitData/SummitContinuousBilateralStreaming/RCS15R": ""
+        }
+    }
+}
