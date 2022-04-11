@@ -5,10 +5,10 @@ import glob
 import pandas as pd
 import rcs_csv_row_helper_functions as csv_helper
 
-CACHED_SESSIONS_FILE_PATH = './cached_sessions.json'
-DATABASE_BOOLEAN_PATH = './database_boolean.json'
+CACHED_SESSIONS_FILE_PATH = './database_jsons/cached_sessions.json'
+DATABASE_BOOLEAN_PATH = './database_jsons/database_boolean.json'
 # Should contain both filepath to project directory, csv filepath, and sessiontype keywords
-PROJECT_SESSIONTYPES_PATH = './project_sessiontype_keywords.json'
+PROJECT_SESSIONTYPES_PATH = './database_jsons/project_sessiontype_keywords.json'
 UNSYNCED_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/'
 UNSYNCED_SUMMIT_NESTED_PATH = '/SummitData/SummitContinuousBilateralStreaming/'
 PROJECTS_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/Projects/'
@@ -101,8 +101,9 @@ def update_cache(cache_data, sessions_to_keep_cached):
 
 if __name__ == "__main__":
     # Get boolean, cached sessions, and sessiontype keywords json data
-    with open(DATABASE_BOOLEAN_PATH) as db_bool:
-        bool_data = json.load(db_bool)
+
+    # with open(DATABASE_BOOLEAN_PATH) as db_bool:
+    #     bool_data = json.load(db_bool)
 
     with open(CACHED_SESSIONS_FILE_PATH) as g:
         cache_data = json.load(g)

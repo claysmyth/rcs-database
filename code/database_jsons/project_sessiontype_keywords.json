@@ -1,0 +1,12 @@
+{
+    "Sleep": {
+        "SessionTypes": ["Overnight"],
+        "BasePath": "",
+        "csvPath": ""
+    },
+    "adaptiveDBS": {
+        "SessionTypes": ["Overnight"],
+        "BasePath": "",
+        "csvPath": ""
+    }
+}
