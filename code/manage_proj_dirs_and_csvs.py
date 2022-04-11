@@ -1,4 +1,3 @@
-from json.tool import main
 import json
 import os
 import re
@@ -8,7 +7,7 @@ import rcs_csv_row_helper_functions as csv_helper
 
 CACHED_SESSIONS_FILE_PATH = './cached_sessions.json'
 DATABASE_BOOLEAN_PATH = './database_boolean.json'
-# Should contain both filepath, csv filepath, and sessiontype keywords
+# Should contain both filepath to project directory, csv filepath, and sessiontype keywords
 PROJECT_SESSIONTYPES_PATH = './project_sessiontype_keywords.json'
 UNSYNCED_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/'
 UNSYNCED_SUMMIT_NESTED_PATH = '/SummitData/SummitContinuousBilateralStreaming/'
@@ -43,7 +42,7 @@ def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
     # find all projects that have this sessiontype as a keyword
     def get_associated_projects(sessionTypes, project_sessionTypes):
         associated_projs_tmp = []
-        for key, value in project_sessionTypes:
+        for key, value in project_sessionTypes.items():
             associated_projs_tmp.extend(key) if set(value) & set(sessionTypes) else None
         return associated_projs_tmp
 
@@ -78,26 +77,26 @@ def create_session_symlinks(rcs, session_name, session_filepath, sessionTypes, a
             os.symlink(session_filepath, os.path.join(sessiontype_proj_dir, session_name))
 
 
-# Adds a row for each session to the project summary csv with attributes that describe each corresponding session
+# Adds a row for each session to the project summary csv, which is stored as pandas dataframe, with attributes that describe each corresponding session
 # TODO: Figure out ordering of columns printed.
-def add_row_to_project_csv(rcs, project_CSVs, session, session_eventLog, session_jsons_path, associated_projs,
+def add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_jsons_path, associated_projs,
                            project_sesstionTypes, sessionTypes):
     session_csv_info = csv_helper.collect_csv_info(rcs, session, {}, session_eventLog, session_jsons_path)
     for proj in associated_projs:
-        curr_proj_csv_path = project_CSVs[proj]
         relevent_sessionTypes = list(set(project_sesstionTypes[proj]) & set(sessionTypes))
         session_csv_info['SessionType(s)'] = ", ".join(relevent_sessionTypes)
-        session_df = pd.Dataframe(session_csv_info)
-        # TODO: Verify below line works as intended
-        session_df.to_csv(curr_proj_csv_path, mode='a', index=False, header=False)
+        project_dfs[proj].loc[len(project_dfs[proj])] = session_csv_info
+        
 
 
 
 
 # If a session with a sessiontype was found without a corresponding project keyword, then is kept in cache.
 # Otherwise, session#'s are deleted from cache
-def update_cache():
-    return None
+def update_cache(cache_data, sessions_to_keep_cached):
+    for rcs, session_list in cache_data.items():
+        cache_data[rcs] = list(set(session_list) - set(sessions_to_keep_cached))
+    return cache_data
 
 
 if __name__ == "__main__":
@@ -118,9 +117,14 @@ if __name__ == "__main__":
     project_sessionTypes = dict(zip(project_data.keys(),
                                     [value["SessionTypes"] for value in project_data.values]))
 
-    # Get project_csvs_filepaths
-    project_CSV_paths = dict(zip(project_data.keys(),
+    # Get each projects CSV filepath
+    project_csv_paths = dict(zip(project_data.keys(),
                                  [value["csvPath"] for value in project_data.values]))
+
+    # Get each projects CSV as a pandas DataFrame
+    project_dfs = dict(zip(project_data.keys(),
+                                 [pd.read_csv(value["csvPath"]) for value in project_data.values]))
+    
 
     # Loop through each session for each RCS device
     sessions_to_keep_cached = []
@@ -139,9 +143,10 @@ if __name__ == "__main__":
 
                 # Checks if there are multiple devices in Session# directory (there should not be).
                 # If not, goes with the creates path to jsons through only device.
+                # TODO: Create error log?
                 if len(devices) > 1:
-                    # TODO: Handle situation
-                    return None, None, None
+                    # TODO: Handle situation, probably keep cached
+                    continue
                 else:
                     session_jsons_path = devices[0]
 
@@ -162,7 +167,11 @@ if __name__ == "__main__":
 
                 # Session will be added to project CSV even if there is no session types logged
                 if associated_projs:
-                    add_row_to_project_csv(rcs, project_CSV_paths, session, session_eventLog, session_jsons_path,
+                    add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_jsons_path,
                                        associated_projs, project_sessionTypes, sessionTypes)
 
-    update_cache(cache_data, sessions_to_keep_cached)
+    for proj, path in project_csv_paths.items():
+        project_dfs[proj].to_csv(path)
+
+    with open(CACHED_SESSIONS_FILE_PATH) as g:
+        json.dump(update_cache(cache_data, sessions_to_keep_cached),g)
