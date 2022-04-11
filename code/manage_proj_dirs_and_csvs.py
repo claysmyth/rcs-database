@@ -2,96 +2,103 @@ from json.tool import main
 import json
 import os
 import re
-import fnmatch
 import glob
+import pandas as pd
 import rcs_csv_row_helper_functions as csv_helper
 
 CACHED_SESSIONS_FILE_PATH = './cached_sessions.json'
 DATABASE_BOOLEAN_PATH = './database_boolean.json'
+# Should contain both filepath, csv filepath, and sessiontype keywords
 PROJECT_SESSIONTYPES_PATH = './project_sessiontype_keywords.json'
 UNSYNCED_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/'
 UNSYNCED_SUMMIT_NESTED_PATH = '/SummitData/SummitContinuousBilateralStreaming/'
+PROJECTS_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/Projects/'
 
-def get_projs_and_sessiontypes(session_filepath, project_sessiontypes):
+# TODO: Create a separate parse_eventLog function??
 
-    # Returns found sessiontypes
-    def get_sessiontypes(session_eventLog):
-        # Recursively search dictionary for sessiontype Events
-        # Save all those in a list
-        # Convert list to set
-        sessiontypes = []
+def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
+    # Returns found sessionTypes
+    global sessionTypes
+
+    def get_sessionTypes(session_eventLog):
+        # Identifies all sesstiontypes logged from the SessionType window in the SCBS Report screen
+        sessionTypes_tmp = []
         for entry in session_eventLog:
             if entry['Event']['EventType'] == 'sessiontype':
-                sessiontypes_tmp = list(filter(None, entry['EventSubType'].split(", ")))
-                sessiontypes.extend(sessiontypes_tmp)
-        
-        return list(set(sessiontypes))
+                sessionTypes_single_entry = list(filter(None, entry['EventSubType'].split(", ")))
+                sessionTypes_tmp.extend(sessionTypes_single_entry)
 
-    # Searches if user is trying to add this sessiontype to a specific project
-    def find_project_in_eventlog(session_eventLog, project_sessiontypes):
-        associated_projs = []
+        return list(set(sessionTypes_tmp))
+
+    # Searches user inputs if user is trying to add this session to a specific project, without related project -->
+    # sessiontype keywords
+    def find_project_in_eventlog(session_eventLog, project_sessionTypes):
+        associated_projs_tmp = []
         for entry in session_eventLog:
             if entry['Event']['EventType'] == 'extra_comments':
                 projs_tmp = list(filter(None, re.split('[^a-zA-A]', entry["EvenSubType"])))
-                associated_projs.extend([proj for proj in projs_tmp if proj in project_sessiontypes.keys()])
-        return associated_projs
+                associated_projs_tmp.extend([proj for proj in projs_tmp if proj in project_sessionTypes.keys()])
+        return associated_projs_tmp
 
     # find all projects that have this sessiontype as a keyword
-    def get_associated_projects(sessiontypes, project_sessiontypes):
-        associated_projs = []
-        for key, value in project_sessiontypes:
-            associated_projs.extend(key) if set(value) & set(sessiontypes) else None
-        return associated_projs
-    
-    # Probably not going to actually be called,
-    # but need a method of keeping session# cached if there is no associated project and a sessiontype was found
-    def keep_in_cache():
-        return None
-    
-    devices = glob.glob(f"{session_filepath}/DeviceNPC*")
+    def get_associated_projects(sessionTypes, project_sessionTypes):
+        associated_projs_tmp = []
+        for key, value in project_sessionTypes:
+            associated_projs_tmp.extend(key) if set(value) & set(sessionTypes) else None
+        return associated_projs_tmp
 
-    if len(devices) > 1:
-        # TODO: Handle situation
-        return None, None
-    else:
-        device_filepath = devices[0]
-    
-    if os.path.isfile(os.path.join(device_filepath, 'EventLog.json')):
-        with open(os.path.join(device_filepath, 'EventLog.json')) as f:
-            session_eventLog = json.load(f)
-        
-        sessiontypes = get_sessiontypes(session_eventLog)
-        associated_projs = []
-        associated_projs.extend(find_project_in_eventlog(session_eventLog, project_sessiontypes))
-        associated_projs.extend(get_associated_projects(sessiontypes, project_sessiontypes))
+    # sessionTypes is a list of all the sessiontype labels the experimentor associated with this recording session
+    sessionTypes = get_sessionTypes(session_eventLog)
+    # associated_projs is a list of all projects this Session# (i.e. recording session) should be a part of
+    associated_projs = []
+    associated_projs.extend(find_project_in_eventlog(session_eventLog, project_sessionTypes))
+    associated_projs.extend(get_associated_projects(sessionTypes, project_sessionTypes))
 
-    if sessiontypes and not associated_projs:
+    # Flag this Session# for staying cached if there are no projects associated with logged sessionTypes.
+    if sessionTypes and not associated_projs:
         keep_cached = True
     else:
         keep_cached = False
-        
-    return sessiontypes, associated_projs, keep_cached
 
-        
+    return sessionTypes, associated_projs, keep_cached
 
-    #associated_projs should be a list of projects that this session is a part of. keep_in_cache is a boolean
-    return associated_projs, keep_cached
 
 # Creates session symlink in associated project directory trees
-def create_session_symlinks(rcs, session_filepath, associated_projs):
+def create_session_symlinks(rcs, session_name, session_filepath, sessionTypes, associated_projs, project_basePaths):
     # Check if session symlink already exists somewhere
     # If not, create symlink in each relevant project
     for proj in associated_projs:
+        rcs_dir = os.path.join(project_basePaths[proj], rcs)
+        if not os.path.isdir(rcs_dir):
+            os.mkdir(rcs_dir)
+        for sessiontype in sessionTypes:
+            sessiontype_proj_dir = os.path.join(rcs_dir, sessiontype)
+            if not os.path.isdir(sessiontype_proj_dir):
+                os.mkdir(sessiontype_proj_dir)
+            os.symlink(session_filepath, os.path.join(sessiontype_proj_dir, session_name))
 
-    return None
 
-#Adds a row for each session to the project summary csv with attributes that describe each corresponding session
-def add_row_to_project_csv():
-    return None
+# Adds a row for each session to the project summary csv with attributes that describe each corresponding session
+# TODO: Figure out ordering of columns printed.
+def add_row_to_project_csv(rcs, project_CSVs, session, session_eventLog, session_jsons_path, associated_projs,
+                           project_sesstionTypes, sessionTypes):
+    session_csv_info = csv_helper.collect_csv_info(rcs, session, {}, session_eventLog, session_jsons_path)
+    for proj in associated_projs:
+        curr_proj_csv_path = project_CSVs[proj]
+        relevent_sessionTypes = list(set(project_sesstionTypes[proj]) & set(sessionTypes))
+        session_csv_info['SessionType(s)'] = ", ".join(relevent_sessionTypes)
+        session_df = pd.Dataframe(session_csv_info)
+        # TODO: Verify below line works as intended
+        session_df.to_csv(curr_proj_csv_path, mode='a', index=False, header=False)
 
-#If a session with a sessiontype was found without a corresponding project keyword, then is kept in cache. Otherwise, session#'s are deleted from cache
+
+
+
+# If a session with a sessiontype was found without a corresponding project keyword, then is kept in cache.
+# Otherwise, session#'s are deleted from cache
 def update_cache():
     return None
+
 
 if __name__ == "__main__":
     # Get boolean, cached sessions, and sessiontype keywords json data
@@ -102,30 +109,60 @@ if __name__ == "__main__":
         cache_data = json.load(g)
 
     with open(PROJECT_SESSIONTYPES_PATH) as p:
-        project_sessiontypes = json.load(p)
+        project_data = json.load(p)
 
+    # De-nest project_data into project_filepaths and proj_sessionTypes
+    project_basePaths = dict(zip(project_data.keys(),
+                                 [value["BasePath"] for value in project_data.values]))
+
+    project_sessionTypes = dict(zip(project_data.keys(),
+                                    [value["SessionTypes"] for value in project_data.values]))
+
+    # Get project_csvs_filepaths
+    project_CSV_paths = dict(zip(project_data.keys(),
+                                 [value["csvPath"] for value in project_data.values]))
+
+    # Loop through each session for each RCS device
     sessions_to_keep_cached = []
     for rcs, session_list in cache_data:
         unsynced_rcs_filepath_complete = os.path.join(UNSYNCED_BASE_PATH, rcs[:-1], UNSYNCED_SUMMIT_NESTED_PATH)
 
+        # each 'session' is a Session# directory name (i.e. an individual SCBS recording session)
         for session in session_list:
-            session_filepath = unsynced_rcs_filepath_complete + '/' + session
+            session_filepath = os.path.join(unsynced_rcs_filepath_complete, session)
 
+            # Checks if Session directory exists in relevant Unsynced directory
             if os.path.isdir(session_filepath):
-                sessiontypes, associated_projs, keep_cached = get_projs_and_sessiontypes(session_filepath, project_sessiontypes)
-                # Probably need to fix the following line, as session will need RCS keyword, and to not have it as append
+                # Retrieves any sessionTypes, associated projects logged. Will be kept in cache if there was
+                # sessionTypes identified but no associated project.
+                devices = glob.glob(f"{session_filepath}/DeviceNPC*")
+
+                # Checks if there are multiple devices in Session# directory (there should not be).
+                # If not, goes with the creates path to jsons through only device.
+                if len(devices) > 1:
+                    # TODO: Handle situation
+                    return None, None, None
+                else:
+                    session_jsons_path = devices[0]
+
+                if os.path.isfile(os.path.join(session_jsons_path, 'EventLog.json')):
+                    with open(os.path.join(session_jsons_path, 'EventLog.json')) as f:
+                        session_eventLog = json.load(f)
+
+                sessionTypes, associated_projs, keep_cached = get_projs_and_sessionTypes(session_eventLog,
+                                                                                         project_sessionTypes)
+
+                # TODO: Fix keep_cached data structure to reflect rcs device
                 sessions_to_keep_cached.append(session) if keep_cached else None
-                create_session_symlinks(rcs, session_filepath, associated_projs, sessiontypes)
-                add_row_to_project_csv(rcs, session_filepath, associated_projs, sessiontypes)
+
+                # Creates symlinks in project directory tree for session based on identified sessionTypes
+                if sessionTypes & associated_projs:
+                    create_session_symlinks(rcs, session, session_filepath, sessionTypes, associated_projs,
+                                            project_basePaths)
+
+                # Session will be added to project CSV even if there is no session types logged
+                if associated_projs:
+                    add_row_to_project_csv(rcs, project_CSV_paths, session, session_eventLog, session_jsons_path,
+                                       associated_projs, project_sessionTypes, sessionTypes)
 
     update_cache(cache_data, sessions_to_keep_cached)
-
-
-
-
-
-
-
-
-
-
