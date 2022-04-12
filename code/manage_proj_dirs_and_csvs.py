@@ -1,3 +1,4 @@
+import logging
 import json
 import os
 import re
@@ -7,11 +8,12 @@ import rcs_csv_row_helper_functions as csv_helper
 
 CACHED_SESSIONS_FILE_PATH = './database_jsons/cached_sessions.json'
 DATABASE_BOOLEAN_PATH = './database_jsons/database_boolean.json'
-# Should contain both filepath to project directory, csv filepath, and sessiontype keywords
 PROJECT_SESSIONTYPES_PATH = './database_jsons/project_sessiontype_keywords.json'
 UNSYNCED_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/'
 UNSYNCED_SUMMIT_NESTED_PATH = '/SummitData/SummitContinuousBilateralStreaming/'
 PROJECTS_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/Projects/'
+
+# TODO: Testing and Error handling.
 
 
 def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
@@ -49,6 +51,9 @@ def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
     sessionTypes = get_sessionTypes(session_eventLog)
     # associated_projs is a list of all projects this Session# (i.e. recording session) should be a part of
     associated_projs = []
+    # Users can explicitly add this session to project with extra_comment in SCBS Report Log. 
+    # NOTE: If there are also sessionTypes found, then sessionType directories will be created in the project directory tree for this Device. 
+        # However, this sessionType will not be added to the sessionType keyword list for this project.
     associated_projs.extend(find_project_in_eventlog(session_eventLog, project_sessionTypes))
     associated_projs.extend(get_associated_projects(sessionTypes, project_sessionTypes))
 
@@ -89,9 +94,6 @@ def add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_j
             project_dfs[proj] = pd.DataFrame(session_csv_info)
         
 
-
-
-
 # If a session with a sessiontype was found without a corresponding project keyword, then is kept in cache.
 # Otherwise, session#'s are deleted from cache
 def update_cache(cache_data, sessions_to_keep_cached):
@@ -104,6 +106,8 @@ def update_cache(cache_data, sessions_to_keep_cached):
 
 
 if __name__ == "__main__":
+    logging.basicConfig(filename="./database_jsons/manage_proj_dirs_and_csvs_log.log", filemode='w', level=logging.INFO, 
+                            format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
     # Get boolean, cached sessions, and sessiontype keywords json data
 
     # with open(DATABASE_BOOLEAN_PATH) as db_bool:
@@ -148,9 +152,9 @@ if __name__ == "__main__":
 
                 # Checks if there are multiple devices in Session# directory (there should not be).
                 # If not, goes with the creates path to jsons through only device.
-                # TODO: Create error log?
                 if len(devices) > 1:
-                    # TODO: Handle situation, probably keep cached
+                    logging.warning('%s has multiple Device subdirectories. Will remain in cache.', session)
+                    sessions_to_keep_cached[rcs].append(session)
                     continue
                 else:
                     session_jsons_path = devices[0]
@@ -162,10 +166,13 @@ if __name__ == "__main__":
                 sessionTypes, associated_projs, keep_cached = get_projs_and_sessionTypes(session_eventLog,
                                                                                          project_sessionTypes)
 
-                # Add to sessions to keep cached if this particular session was flagged for continued caching
-                sessions_to_keep_cached[rcs].append(session) if keep_cached else None
+                # Add to sessions_to_keep_cached if this particular session was flagged for continued caching, 
+                # which occurs when a sessionType was found, but no associated projects.
+                if keep_cached:
+                    sessions_to_keep_cached[rcs].append(session)
+                    logging.info('%s has sessionType(s) with no related projects', session)
 
-                # Creates symlinks in project directory tree for session based on identified sessionTypes
+                # Creates symlinks in project directory tree for session based on identified sessionTypes.
                 if sessionTypes & associated_projs:
                     create_session_symlinks(rcs, session, session_filepath, sessionTypes, associated_projs,
                                             project_basePaths)
@@ -180,3 +187,5 @@ if __name__ == "__main__":
 
     with open(CACHED_SESSIONS_FILE_PATH) as g:
         json.dump(update_cache(cache_data, sessions_to_keep_cached),g)
+    
+    logging.info("Completed Run.\n")
