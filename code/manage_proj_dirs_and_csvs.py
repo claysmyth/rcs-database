@@ -30,8 +30,8 @@ def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
 
         return list(set(sessionTypes_tmp))
 
-    # Searches user inputs if user is trying to add this session to a specific project, without related project -->
-    # sessiontype keywords
+    # Searches user inputs if user is trying to add this session to any, or multiple, project, without related
+    # project to sessiontype keywords
     def find_project_in_eventlog(session_eventLog, project_sessionTypes):
         associated_projs_tmp = []
         for entry in session_eventLog:
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     sessions_to_keep_cached = {}
     for rcs, session_list in cache_data.items():
         sessions_to_keep_cached[rcs] = []
-        unsynced_rcs_filepath_complete = os.path.join(UNSYNCED_BASE_PATH, rcs[:-1], UNSYNCED_SUMMIT_NESTED_PATH)
+        unsynced_rcs_filepath_complete = os.path.join(UNSYNCED_BASE_PATH, f'{rcs[:-1]} Un-Synced Data', UNSYNCED_SUMMIT_NESTED_PATH, rcs)
 
         # each 'session' is a Session# directory name (i.e. an individual SCBS recording session)
         for session in session_list:
