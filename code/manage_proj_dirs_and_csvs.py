@@ -13,7 +13,6 @@ UNSYNCED_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synce
 UNSYNCED_SUMMIT_NESTED_PATH = '/SummitData/SummitContinuousBilateralStreaming/'
 PROJECTS_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/Projects/'
 
-# TODO: Create a separate parse_eventLog function??
 
 def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
     # Returns found sessionTypes
@@ -78,14 +77,16 @@ def create_session_symlinks(rcs, session_name, session_filepath, sessionTypes, a
 
 
 # Adds a row for each session to the project summary csv, which is stored as pandas dataframe, with attributes that describe each corresponding session
-# TODO: Figure out ordering of columns printed.
 def add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_jsons_path, associated_projs,
                            project_sesstionTypes, sessionTypes):
     session_csv_info = csv_helper.collect_csv_info(rcs, session, {}, session_eventLog, session_jsons_path)
     for proj in associated_projs:
         relevent_sessionTypes = list(set(project_sesstionTypes[proj]) & set(sessionTypes))
         session_csv_info['SessionType(s)'] = ", ".join(relevent_sessionTypes)
-        project_dfs[proj].loc[len(project_dfs[proj])] = session_csv_info
+        if proj in project_dfs.keys():
+            project_dfs[proj].loc[len(project_dfs[proj])] = session_csv_info
+        else:
+            project_dfs[proj] = pd.DataFrame(session_csv_info)
         
 
 
@@ -94,8 +95,11 @@ def add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_j
 # If a session with a sessiontype was found without a corresponding project keyword, then is kept in cache.
 # Otherwise, session#'s are deleted from cache
 def update_cache(cache_data, sessions_to_keep_cached):
-    for rcs, session_list in cache_data.items():
-        cache_data[rcs] = list(set(session_list) - set(sessions_to_keep_cached))
+    for rcs in cache_data.keys():
+        if not sessions_to_keep_cached[rcs]:
+            cache_data.pop(rcs)
+        else:
+            cache_data[rcs] = list(set(sessions_to_keep_cached[rcs]))
     return cache_data
 
 
@@ -113,23 +117,23 @@ if __name__ == "__main__":
 
     # De-nest project_data into project_filepaths and proj_sessionTypes
     project_basePaths = dict(zip(project_data.keys(),
-                                 [value["BasePath"] for value in project_data.values]))
+                                 [value["BasePath"] for value in project_data.values()]))
 
     project_sessionTypes = dict(zip(project_data.keys(),
-                                    [value["SessionTypes"] for value in project_data.values]))
+                                    [value["SessionTypes"] for value in project_data.values()]))
 
     # Get each projects CSV filepath
     project_csv_paths = dict(zip(project_data.keys(),
-                                 [value["csvPath"] for value in project_data.values]))
+                                 [value["csvPath"] for value in project_data.values()]))
 
     # Get each projects CSV as a pandas DataFrame
-    project_dfs = dict(zip(project_data.keys(),
-                                 [pd.read_csv(value["csvPath"]) for value in project_data.values]))
+    project_dfs = {key: pd.read_csv(value["csvPath"]) for key, value in project_data.items() if os.path.isfile(value["csvPath"])}
     
 
     # Loop through each session for each RCS device
-    sessions_to_keep_cached = []
-    for rcs, session_list in cache_data:
+    sessions_to_keep_cached = {}
+    for rcs, session_list in cache_data.items():
+        sessions_to_keep_cached[rcs] = []
         unsynced_rcs_filepath_complete = os.path.join(UNSYNCED_BASE_PATH, rcs[:-1], UNSYNCED_SUMMIT_NESTED_PATH)
 
         # each 'session' is a Session# directory name (i.e. an individual SCBS recording session)
@@ -158,15 +162,15 @@ if __name__ == "__main__":
                 sessionTypes, associated_projs, keep_cached = get_projs_and_sessionTypes(session_eventLog,
                                                                                          project_sessionTypes)
 
-                # TODO: Fix keep_cached data structure to reflect rcs device
-                sessions_to_keep_cached.append(session) if keep_cached else None
+                # Add to sessions to keep cached if this particular session was flagged for continued caching
+                sessions_to_keep_cached[rcs].append(session) if keep_cached else None
 
                 # Creates symlinks in project directory tree for session based on identified sessionTypes
                 if sessionTypes & associated_projs:
                     create_session_symlinks(rcs, session, session_filepath, sessionTypes, associated_projs,
                                             project_basePaths)
 
-                # Session will be added to project CSV even if there is no session types logged
+                # Note: Session will be added to project CSV even if there is no sessionTypes logged
                 if associated_projs:
                     add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_jsons_path,
                                        associated_projs, project_sessionTypes, sessionTypes)
