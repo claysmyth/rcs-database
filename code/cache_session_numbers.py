@@ -42,11 +42,11 @@ if __name__ == "__main__":
     patient_dict = get_session_numbers()
 
     # Update cache with new session lists for each patient. Merges with existing list  (no duplicates), instead of replacing. 
-    for key, value in patient_dict.items():
+    for key, sessions in patient_dict.items():
         if key in cache_data.keys():
-            cache_data[key] = list(set(cache_data[key] + value))
+            [cache_data[key].append(session) for session in sessions if session not in cache_data[key]]
         else:
-            cache_data[key] = value
+            cache_data[key] = sessions
 
     
     # # Flag databasing as not updated

@@ -1,5 +1,6 @@
 import logging
 import json
+import pprint
 import os
 import re
 import glob
@@ -44,7 +45,7 @@ def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
     def get_associated_projects(sessionTypes, project_sessionTypes):
         associated_projs_tmp = []
         for key, value in project_sessionTypes.items():
-            associated_projs_tmp.extend(key) if set(value) & set(sessionTypes) else None
+            if set(value) & set(sessionTypes): associated_projs_tmp.extend(key)
         return associated_projs_tmp
 
     # sessionTypes is a list of all the sessiontype labels the experimentor associated with this recording session
@@ -78,7 +79,8 @@ def create_session_symlinks(rcs, session_name, session_filepath, sessionTypes, a
             sessiontype_proj_dir = os.path.join(rcs_dir, sessiontype)
             if not os.path.isdir(sessiontype_proj_dir):
                 os.mkdir(sessiontype_proj_dir)
-            os.symlink(session_filepath, os.path.join(sessiontype_proj_dir, session_name))
+            symlink = os.path.join(sessiontype_proj_dir, session_name)
+            if not os.islink(symlink): os.symlink(session_filepath, symlink)
 
 
 # Adds a row for each session to the project summary csv, which is stored as pandas dataframe, with attributes that describe each corresponding session
@@ -96,17 +98,12 @@ def add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_j
 
 # If a session with a sessiontype was found without a corresponding project keyword, then is kept in cache.
 # Otherwise, session#'s are deleted from cache
-def update_cache(cache_data, sessions_to_keep_cached):
-    for rcs in cache_data.keys():
-        if not sessions_to_keep_cached[rcs]:
-            cache_data.pop(rcs)
-        else:
-            cache_data[rcs] = list(set(sessions_to_keep_cached[rcs]))
-    return cache_data
+def update_cache(sessions_to_keep_cached):
+    return {rcs: sessions_to_cache for rcs, sessions_to_cache in sessions_to_keep_cached.items() if sessions_to_cache}
 
 
 if __name__ == "__main__":
-    logging.basicConfig(filename="./database_jsons/manage_proj_dirs_and_csvs_log.log", filemode='w', level=logging.INFO, 
+    logging.basicConfig(filename="./database_jsons/manage_proj_dirs_and_csvs_log.log", filemode='a', level=logging.INFO, 
                             format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
     # Get boolean, cached sessions, and sessiontype keywords json data
 
@@ -181,11 +178,17 @@ if __name__ == "__main__":
                 if associated_projs:
                     add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_jsons_path,
                                        associated_projs, project_sessionTypes, sessionTypes)
+            
+            else:
+                # If there is not directory found for this session in RC+S Patient Unsynced Data, then session remains in cache
+                sessions_to_keep_cached[rcs].append(session)
+                logging.warning('%s does not have a directory in RC+S Patient Unsynced Data directory tree', session)
 
-    for proj, path in project_csv_paths.items():
-        project_dfs[proj].to_csv(path)
+    for proj, df in project_dfs.items():
+        path = project_csv_paths[proj]
+        df.to_csv(path)
 
-    with open(CACHED_SESSIONS_FILE_PATH) as g:
-        json.dump(update_cache(cache_data, sessions_to_keep_cached),g)
+    with open(CACHED_SESSIONS_FILE_PATH, 'w') as g:
+        json.dump(update_cache(sessions_to_keep_cached), g)
     
     logging.info("Completed Run.\n")

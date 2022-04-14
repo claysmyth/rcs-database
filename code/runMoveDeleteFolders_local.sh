@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
-cd /usr/local/MATLAB/R2021b/bin
-pwd
+database_dir=`pwd`
+echo $database_dir
 echo $$
+
+eval "$(conda shell.bash hook)"
+conda activate db_env
+python3 ./cache_session_numbers.py
+conda deactivate
+
+cd /usr/local/MATLAB/R2021b/bin
 ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
 ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
+
+cd $database_dir
+conda activate db_env
+python3 ./manage_proj_dirs_and_csvs.py
+conda deactivate
 # print report log 
 # ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/database_log.log" -batch "run /home/starrlab/bin/code/rcs-database-main/code/create_database_from_device_settings_files.m"
 

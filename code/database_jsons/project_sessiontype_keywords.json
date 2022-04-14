@@ -1,11 +1,11 @@
 {
     "Sleep": {
-        "SessionTypes": ["Overnight"],
-        "BasePath": "",
-        "csvPath": ""
+        "SessionTypes": ["Overnight", "Autorun", "test3"],
+        "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Sleep",
+        "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Sleep/Sleep_Summary.csv"
     },
     "adaptiveDBS": {
-        "SessionTypes": ["Overnight"],
+        "SessionTypes": [],
         "BasePath": "",
         "csvPath": ""
     }
