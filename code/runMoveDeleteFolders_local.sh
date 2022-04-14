@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 database_dir=`pwd`
-echo $database_dir
 echo $$
 
 eval "$(conda shell.bash hook)"

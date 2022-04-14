@@ -26,7 +26,7 @@ def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
         sessionTypes_tmp = []
         for entry in session_eventLog:
             if entry['Event']['EventType'] == 'sessiontype':
-                sessionTypes_single_entry = list(filter(None, entry['EventSubType'].split(", ")))
+                sessionTypes_single_entry = list(filter(None, entry['Event']['EventSubType'].split(", ")))
                 sessionTypes_tmp.extend(sessionTypes_single_entry)
 
         return list(set(sessionTypes_tmp))
@@ -37,7 +37,7 @@ def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
         associated_projs_tmp = []
         for entry in session_eventLog:
             if entry['Event']['EventType'] == 'extra_comments':
-                projs_tmp = list(filter(None, re.split('[^a-zA-A]', entry["EvenSubType"])))
+                projs_tmp = list(filter(None, re.split('[^a-zA-A]', entry['Event']["EventSubType"])))
                 associated_projs_tmp.extend([proj for proj in projs_tmp if proj in project_sessionTypes.keys()])
         return associated_projs_tmp
 
@@ -45,7 +45,7 @@ def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
     def get_associated_projects(sessionTypes, project_sessionTypes):
         associated_projs_tmp = []
         for key, value in project_sessionTypes.items():
-            if set(value) & set(sessionTypes): associated_projs_tmp.extend(key)
+            if set(value) & set(sessionTypes): associated_projs_tmp.extend([key])
         return associated_projs_tmp
 
     # sessionTypes is a list of all the sessiontype labels the experimentor associated with this recording session
@@ -80,20 +80,25 @@ def create_session_symlinks(rcs, session_name, session_filepath, sessionTypes, a
             if not os.path.isdir(sessiontype_proj_dir):
                 os.mkdir(sessiontype_proj_dir)
             symlink = os.path.join(sessiontype_proj_dir, session_name)
-            if not os.islink(symlink): os.symlink(session_filepath, symlink)
+            if not os.path.islink(symlink): os.symlink(session_filepath, symlink)
 
 
 # Adds a row for each session to the project summary csv, which is stored as pandas dataframe, with attributes that describe each corresponding session
 def add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_jsons_path, associated_projs,
                            project_sesstionTypes, sessionTypes):
     session_csv_info = csv_helper.collect_csv_info(rcs, session, {}, session_eventLog, session_jsons_path)
+    SESSIONS_COLUMN = "Session#"
+    COLUMN_ORDER = ['RCS#', 'Side', 'Session#', 'SessionType(s)', 'TimeStarted', 'TimeEnded', 'Notes', 'Data_FilePath', 'Data_Hyperlink']
     for proj in associated_projs:
         relevent_sessionTypes = list(set(project_sesstionTypes[proj]) & set(sessionTypes))
         session_csv_info['SessionType(s)'] = ", ".join(relevent_sessionTypes)
         if proj in project_dfs.keys():
-            project_dfs[proj].loc[len(project_dfs[proj])] = session_csv_info
+            proj_df = project_dfs[proj]
+            # Protects against duplicate entries
+            if session not in proj_df[SESSIONS_COLUMN].values: 
+                proj_df.loc[len(proj_df)] = session_csv_info
         else:
-            project_dfs[proj] = pd.DataFrame(session_csv_info)
+            project_dfs[proj] = pd.DataFrame(session_csv_info, index=[0]).reindex(columns=COLUMN_ORDER)
         
 
 # If a session with a sessiontype was found without a corresponding project keyword, then is kept in cache.
@@ -105,6 +110,8 @@ def update_cache(sessions_to_keep_cached):
 if __name__ == "__main__":
     logging.basicConfig(filename="./database_jsons/manage_proj_dirs_and_csvs_log.log", filemode='a', level=logging.INFO, 
                             format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+    
+    logging.info("Beginning Manage Project Directories run")
     # Get boolean, cached sessions, and sessiontype keywords json data
 
     # with open(DATABASE_BOOLEAN_PATH) as db_bool:
@@ -128,14 +135,15 @@ if __name__ == "__main__":
                                  [value["csvPath"] for value in project_data.values()]))
 
     # Get each projects CSV as a pandas DataFrame
-    project_dfs = {key: pd.read_csv(value["csvPath"]) for key, value in project_data.items() if os.path.isfile(value["csvPath"])}
+    project_dfs = {key: pd.read_csv(value["csvPath"], index_col=0) for key, value in project_data.items() if os.path.isfile(value["csvPath"])}
     
 
     # Loop through each session for each RCS device
     sessions_to_keep_cached = {}
     for rcs, session_list in cache_data.items():
         sessions_to_keep_cached[rcs] = []
-        unsynced_rcs_filepath_complete = os.path.join(UNSYNCED_BASE_PATH, f'{rcs[:-1]} Un-Synced Data', UNSYNCED_SUMMIT_NESTED_PATH, rcs)
+        #unsynced_rcs_filepath_complete = os.path.join(UNSYNCED_BASE_PATH, f'{rcs[:-1]} Un-Synced Data', UNSYNCED_SUMMIT_NESTED_PATH, rcs)
+        unsynced_rcs_filepath_complete =  f'{UNSYNCED_BASE_PATH}{rcs[:-1]} Un-Synced Data{UNSYNCED_SUMMIT_NESTED_PATH}{rcs}'
 
         # each 'session' is a Session# directory name (i.e. an individual SCBS recording session)
         for session in session_list:
@@ -162,6 +170,7 @@ if __name__ == "__main__":
 
                 sessionTypes, associated_projs, keep_cached = get_projs_and_sessionTypes(session_eventLog,
                                                                                          project_sessionTypes)
+                
 
                 # Add to sessions_to_keep_cached if this particular session was flagged for continued caching, 
                 # which occurs when a sessionType was found, but no associated projects.
@@ -170,10 +179,11 @@ if __name__ == "__main__":
                     logging.info('%s has sessionType(s) with no related projects', session)
 
                 # Creates symlinks in project directory tree for session based on identified sessionTypes.
-                if sessionTypes & associated_projs:
+                if sessionTypes and associated_projs:
                     create_session_symlinks(rcs, session, session_filepath, sessionTypes, associated_projs,
                                             project_basePaths)
 
+                # TODO: Protect against duplicates
                 # Note: Session will be added to project CSV even if there is no sessionTypes logged
                 if associated_projs:
                     add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_jsons_path,
