@@ -13,7 +13,7 @@ cd /usr/local/MATLAB/R2021b/bin
 
 cd $database_dir
 conda activate db_env
-python3 ./manage_proj_dirs_and_csvs.py
+#python3 ./manage_proj_dirs_and_csvs.py
 conda deactivate
 # print report log 
 # ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/database_log.log" -batch "run /home/starrlab/bin/code/rcs-database-main/code/create_database_from_device_settings_files.m"

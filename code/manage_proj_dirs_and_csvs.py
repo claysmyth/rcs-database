@@ -88,7 +88,7 @@ def add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_j
                            project_sesstionTypes, sessionTypes):
     session_csv_info = csv_helper.collect_csv_info(rcs, session, {}, session_eventLog, session_jsons_path)
     SESSIONS_COLUMN = "Session#"
-    COLUMN_ORDER = ['RCS#', 'Side', 'Session#', 'SessionType(s)', 'TimeStarted', 'TimeEnded', 'Notes', 'Data_FilePath', 'Data_Hyperlink']
+    COLUMN_ORDER = ['RCS#', 'Side', 'Session#', 'SessionType(s)', 'TimeStarted', 'TimeEnded', 'Notes', 'Dropbox_Link', 'Data_Server_Hyperlink', 'Data_Server_FilePath']
     for proj in associated_projs:
         relevent_sessionTypes = list(set(project_sesstionTypes[proj]) & set(sessionTypes))
         session_csv_info['SessionType(s)'] = ", ".join(relevent_sessionTypes)

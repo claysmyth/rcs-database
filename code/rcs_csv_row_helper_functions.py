@@ -34,6 +34,10 @@ def get_notes(session_eventLog):
             sessionNotes.extend([entryNotes])
     return ' '.join(sessionNotes) if sessionNotes else ''
 
+def get_Dropbox_link(rcs, session_jsons_path):
+    DROPBOX_HTML_PREFIX = f"https://www.dropbox.com/home/RC%2BS%20Patient%20Un-Synced%20Data/{rcs[:-1]}%20Un-Synced%20Data/"
+    slice_ind = session_jsons_path.find("Summit")
+    return DROPBOX_HTML_PREFIX + session_jsons_path[slice_ind:]
 
 # TODO: Figure out good implementation for this... maybe need to use OpenMind, matlab code
 def get_percent_disconnect(session_jsons_path):
@@ -48,8 +52,9 @@ def collect_csv_info(rcs, session, session_info_dict, session_eventLog, session_
     session_info_dict["TimeStarted"] = get_start_time(session)
     session_info_dict["TimeEnded"] = get_end_time(session_jsons_path)
     session_info_dict["Notes"] = get_notes(session_eventLog)
-    session_info_dict["Data_FilePath"] = f"'{session_jsons_path}'"
-    session_info_dict["Data_Hyperlink"] = f'=HYPERLINK("{session_jsons_path}","jsons_link")'
+    session_info_dict["Dropbox_Link"] = get_Dropbox_link(rcs, session_jsons_path)
+    session_info_dict["Data_Server_Hyperlink"] = f'=HYPERLINK("{session_jsons_path}","jsons_link")'
+    session_info_dict["Data_Server_FilePath"] = f"'{session_jsons_path}'"
     #session_info_series["%_Disconnected"] = get_percent_disconnect(session_jsons_path)
     # TODO: Figure out what metadata to collect
     return session_info_dict
