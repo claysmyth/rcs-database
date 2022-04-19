@@ -7,13 +7,14 @@ conda activate db_env
 python3 ./cache_session_numbers.py
 conda deactivate
 
-cd /usr/local/MATLAB/R2021b/bin
-./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
-./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
+# cd /usr/local/MATLAB/R2021b/bin
+# ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
+# ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
 
+mv "/media/dropbox_hdd/Starr Lab Dropbox/juan_testing/Clay_database_test/RCS13R/"* "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS13 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS13R/"
 cd $database_dir
 conda activate db_env
-#python3 ./manage_proj_dirs_and_csvs.py
+python3 ./manage_proj_dirs_and_csvs.py
 conda deactivate
 # print report log 
 # ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/database_log.log" -batch "run /home/starrlab/bin/code/rcs-database-main/code/create_database_from_device_settings_files.m"

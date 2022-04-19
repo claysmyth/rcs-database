@@ -8,5 +8,10 @@
         "SessionTypes": [],
         "BasePath": "",
         "csvPath": ""
+    },
+    "Clay_db_demo": {
+        "SessionTypes": ["ON Med", "OFF Med", "Something else"],
+        "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Clay_db_demo",
+        "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Clay_db_demo/demo_summary.csv"
     }
 }

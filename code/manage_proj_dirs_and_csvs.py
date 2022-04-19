@@ -37,7 +37,7 @@ def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
         associated_projs_tmp = []
         for entry in session_eventLog:
             if entry['Event']['EventType'] == 'extra_comments':
-                projs_tmp = list(filter(None, re.split('[^a-zA-A]', entry['Event']["EventSubType"])))
+                projs_tmp = list(filter(None, re.split('[^a-zA-Z_]', entry['Event']["EventSubType"])))
                 associated_projs_tmp.extend([proj for proj in projs_tmp if proj in project_sessionTypes.keys()])
         return associated_projs_tmp
 
@@ -68,14 +68,14 @@ def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
 
 
 # Creates session symlink in associated project directory trees
-def create_session_symlinks(rcs, session_name, session_filepath, sessionTypes, associated_projs, project_basePaths):
+def create_session_symlinks(rcs, session_name, session_filepath, sessionTypes, associated_projs, project_sessionTypes, project_basePaths):
     # Check if session symlink already exists somewhere
     # If not, create symlink in each relevant project
     for proj in associated_projs:
         rcs_dir = os.path.join(project_basePaths[proj], rcs)
         if not os.path.isdir(rcs_dir):
             os.mkdir(rcs_dir)
-        for sessiontype in sessionTypes:
+        for sessiontype in list(set(sessionTypes) & set(project_sessionTypes[proj])):
             sessiontype_proj_dir = os.path.join(rcs_dir, sessiontype)
             if not os.path.isdir(sessiontype_proj_dir):
                 os.mkdir(sessiontype_proj_dir)
@@ -143,11 +143,14 @@ if __name__ == "__main__":
     for rcs, session_list in cache_data.items():
         sessions_to_keep_cached[rcs] = []
         #unsynced_rcs_filepath_complete = os.path.join(UNSYNCED_BASE_PATH, f'{rcs[:-1]} Un-Synced Data', UNSYNCED_SUMMIT_NESTED_PATH, rcs)
+
+        # Get complete file path to data in unsynced directory
         unsynced_rcs_filepath_complete =  f'{UNSYNCED_BASE_PATH}{rcs[:-1]} Un-Synced Data{UNSYNCED_SUMMIT_NESTED_PATH}{rcs}'
 
         # each 'session' is a Session# directory name (i.e. an individual SCBS recording session)
         for session in session_list:
             session_filepath = os.path.join(unsynced_rcs_filepath_complete, session)
+
 
             # Checks if Session directory exists in relevant Unsynced directory
             if os.path.isdir(session_filepath):
@@ -156,7 +159,7 @@ if __name__ == "__main__":
                 devices = glob.glob(f"{session_filepath}/DeviceNPC*")
 
                 # Checks if there are multiple devices in Session# directory (there should not be).
-                # If not, goes with the creates path to jsons through only device.
+                # If not, creates path to jsons through only device.
                 if len(devices) > 1:
                     logging.warning('%s has multiple Device subdirectories. Will remain in cache.', session)
                     sessions_to_keep_cached[rcs].append(session)
@@ -164,13 +167,14 @@ if __name__ == "__main__":
                 else:
                     session_jsons_path = devices[0]
 
+
                 if os.path.isfile(os.path.join(session_jsons_path, 'EventLog.json')):
                     with open(os.path.join(session_jsons_path, 'EventLog.json')) as f:
                         session_eventLog = json.load(f)
 
                 sessionTypes, associated_projs, keep_cached = get_projs_and_sessionTypes(session_eventLog,
                                                                                          project_sessionTypes)
-                
+
 
                 # Add to sessions_to_keep_cached if this particular session was flagged for continued caching, 
                 # which occurs when a sessionType was found, but no associated projects.
@@ -180,7 +184,7 @@ if __name__ == "__main__":
 
                 # Creates symlinks in project directory tree for session based on identified sessionTypes.
                 if sessionTypes and associated_projs:
-                    create_session_symlinks(rcs, session, session_filepath, sessionTypes, associated_projs,
+                    create_session_symlinks(rcs, session, session_filepath, sessionTypes, associated_projs, project_sessionTypes,
                                             project_basePaths)
 
                 # TODO: Protect against duplicates

@@ -9,7 +9,7 @@ def get_side(rcs):
 
 
 def get_start_time(session):
-    return datetime.utcfromtimestamp(int(session[7:17])).strftime('%m-%d-%Y %H:%M:%S')
+    return datetime.fromtimestamp(int(session[7:17])).strftime('%m-%d-%Y %H:%M:%S')
 
 
 def get_end_time(session_jsons_path):
@@ -20,7 +20,7 @@ def get_end_time(session_jsons_path):
             session_end_unix_time = deviceSettings[-1]['RecordInfo']['HostUnixTime']
         # Drop milliseconds from unix_time
         session_end_unix_time = round(session_end_unix_time/1000)
-        return datetime.utcfromtimestamp(session_end_unix_time).strftime('%m-%d-%Y %H:%M:%S')
+        return datetime.fromtimestamp(session_end_unix_time).strftime('%m-%d-%Y %H:%M:%S')
     else:
         return 'WARNING: No JSON data found.'
 
