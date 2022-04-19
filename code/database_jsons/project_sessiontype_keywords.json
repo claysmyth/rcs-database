@@ -1,6 +1,9 @@
 {
     "Sleep": {
-        "SessionTypes": ["Overnight", "Autorun"],
+        "SessionTypes": [
+            "Overnight",
+            "Autorun"
+        ],
         "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Sleep",
         "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Sleep/Sleep_Summary.csv"
     },
@@ -10,7 +13,12 @@
         "csvPath": ""
     },
     "Clay_db_demo": {
-        "SessionTypes": ["ON Med", "OFF Med", "Something else"],
+        "SessionTypes": [
+            "ON Med",
+            "OFF Med",
+            "Something else",
+            "Something new"
+        ],
         "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Clay_db_demo",
         "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Clay_db_demo/demo_summary.csv"
     }

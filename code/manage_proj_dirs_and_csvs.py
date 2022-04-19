@@ -14,7 +14,20 @@ UNSYNCED_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synce
 UNSYNCED_SUMMIT_NESTED_PATH = '/SummitData/SummitContinuousBilateralStreaming/'
 PROJECTS_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/Projects/'
 
-# TODO: Testing and Error handling.
+
+def add_sessionType_to_project(session_eventLog, project_sessionTypes, logging):
+    # Searches for entry of the form "Add '<sessionType>' to '<project>'", and adds the resulting sessionType to corresponding Project
+    sessionType_added = False
+    for entry in session_eventLog:
+        if entry['Event']['EventType'] == 'extra_comments':
+                entry_tmp = list(filter(None, re.split(" '|' |'", entry['Event']["EventSubType"])))
+                if bool(set(entry_tmp) & set(['add', 'Add'])) and bool(set(entry_tmp) & set(['to', 'To'])) and bool(set(entry_tmp) & set(project_sessionTypes.keys())):
+                    desired_proj = entry_tmp[-1]
+                    new_sessionType = entry_tmp[1]
+                    project_sessionTypes[desired_proj].append(new_sessionType)
+                    logging.info('sessionType %s has been added to project %s', new_sessionType, desired_proj)
+                    sessionType_added = True
+    return sessionType_added
 
 
 def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
@@ -171,6 +184,9 @@ if __name__ == "__main__":
                 if os.path.isfile(os.path.join(session_jsons_path, 'EventLog.json')):
                     with open(os.path.join(session_jsons_path, 'EventLog.json')) as f:
                         session_eventLog = json.load(f)
+                
+                
+                update_sessionTypes = add_sessionType_to_project(session_eventLog, project_sessionTypes, logging)
 
                 sessionTypes, associated_projs, keep_cached = get_projs_and_sessionTypes(session_eventLog,
                                                                                          project_sessionTypes)
@@ -204,5 +220,21 @@ if __name__ == "__main__":
 
     with open(CACHED_SESSIONS_FILE_PATH, 'w') as g:
         json.dump(update_cache(sessions_to_keep_cached), g)
+    
+    if update_sessionTypes:
+        print('executed')
+        # Read old project data json
+        with open(PROJECT_SESSIONTYPES_PATH) as p:
+            project_data_to_update = json.load(p)
+
+        # If the current project_sessionType dictionary list is longer than that in json, 
+        # then replace json "SessionType" field with updated list of sessionTypes
+        for project in project_data_to_update.keys():
+            if len(project_sessionTypes[project]) > len(project_data_to_update[project]["SessionTypes"]):
+                project_data_to_update[project]["SessionTypes"] = project_sessionTypes[project]
+        
+        # Write to json file with updated data
+        with open(PROJECT_SESSIONTYPES_PATH, 'w') as p:
+            json.dump(project_data_to_update, p)
     
     logging.info("Completed Run.\n")
