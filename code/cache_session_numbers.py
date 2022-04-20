@@ -25,19 +25,11 @@ def get_session_numbers():
     return patient_dict
 
 if __name__ == "__main__":
-    # Get boolean and cache data
-    # with open(DATABASE_BOOLEAN_PATH) as db_bool:
-    #     bool_data = json.load(db_bool)
+    # Cache data
 
     # Get cache
     with open(CACHE_FILE_PATH) as g:
         cache_data = json.load(g)
-
-
-    # If data_boolean reads that databasing script is up to date with cache, then clear cache
-    # [bool, delta] = list(bool_data.values())
-    # if bool and not delta:
-    #     cache_date = {}
 
     patient_dict = get_session_numbers()
 
@@ -48,17 +40,8 @@ if __name__ == "__main__":
         else:
             cache_data[key] = sessions
 
-    
-    # # Flag databasing as not updated
-    # bool = False
-    # # Increment delta
-    # delta += 1
-    # bool_data = dict(zip(bool_data.keys(), [bool, delta]))
-
     # Write to jsons
     with open(CACHE_FILE_PATH, 'w') as out_cache:
         json.dump(cache_data, out_cache)
     
-    # with open(DATABASE_BOOLEAN_PATH, 'w') as out_bool:
-    #     json.dump(bool_data, out_bool)
 

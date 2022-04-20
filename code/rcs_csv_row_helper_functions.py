@@ -44,7 +44,6 @@ def get_percent_disconnect(session_jsons_path):
     return None
 
 
-# TODO: Decide how I want to define columns. Add project and sessiontype info.
 def collect_csv_info(rcs, session, session_info_dict, session_eventLog, session_jsons_path):
     session_info_dict["RCS#"] = rcs[:5]
     session_info_dict["Side"] = get_side(rcs)

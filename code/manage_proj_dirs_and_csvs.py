@@ -125,10 +125,7 @@ if __name__ == "__main__":
                             format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
     
     logging.info("Beginning Manage Project Directories run")
-    # Get boolean, cached sessions, and sessiontype keywords json data
-
-    # with open(DATABASE_BOOLEAN_PATH) as db_bool:
-    #     bool_data = json.load(db_bool)
+    # Cached sessions, and sessiontype keywords json data
 
     with open(CACHED_SESSIONS_FILE_PATH) as g:
         cache_data = json.load(g)
