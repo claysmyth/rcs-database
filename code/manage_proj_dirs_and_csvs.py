@@ -224,7 +224,8 @@ if __name__ == "__main__":
         updated_cache = update_cache(sessions_to_keep_cached)
         for rcs, sessions in cache_data.items():
             if rcs in updated_cache.keys():
-                logging.info('Removed following sessions from cache: %s - %s', rcs, set(sessions).difference(set(updated_cache[rcs])))
+                removed_sessions = set(sessions).difference(set(updated_cache[rcs]))
+                if removed_sessions: logging.info('Removed following sessions from cache: %s - %s', rcs, removed_sessions)
             else:
                 logging.info('Removed following sessions from cache: %s - %s', rcs, sessions)
         json.dump(updated_cache, g)

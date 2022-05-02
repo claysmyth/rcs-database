@@ -43,7 +43,7 @@ if __name__ == "__main__":
         if device in cache_data.keys():
             new_sessions = [session for session in sessions if session not in cache_data[device]]
             cache_data[device].extend(new_sessions)
-            if new_sessions: logging.info("Caching session(s): %s - %s", device, [session for session in sessions if session not in cache_data[device]])
+            if new_sessions: logging.info("Caching session(s): %s - %s", device, new_sessions)
         else:
             cache_data[device] = sessions
             if sessions: logging.info("Caching session(s): %s - %s", device, sessions)

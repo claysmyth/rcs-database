@@ -627,3 +627,31 @@
 30-Apr-22 22:36:42 - Completed Run.
 
 01-May-22 18:28:49 - Beginning Manage Project Directories run
+01-May-22 20:36:01 - Beginning Manage Project Directories run
+01-May-22 20:36:01 - RCS02L - Session1651324656443 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:36:01 - RCS02L - Session1651304449313 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:36:01 - RCS02R - Session1651324650818 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:36:01 - RCS02R - Session1651304449877 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:36:01 - RCS16L - Session1651414078528 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:36:01 - RCS16L - Session1651414116394 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:36:01 - RCS16R - Session1651414112687 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:36:01 - Removed following sessions from cache: RCS02L - set()
+01-May-22 20:36:01 - Removed following sessions from cache: RCS02R - set()
+01-May-22 20:36:01 - Removed following sessions from cache: RCS16L - {'Session1651406715709', 'Session1651323784980', 'Session1651336829892', 'Session1651325492382', 'Session1651336131764', 'Session1651324792602', 'Session1651406692845', 'Session1651326316767', 'Session1651385140384'}
+01-May-22 20:36:01 - Removed following sessions from cache: RCS16R - {'Session1651336821364', 'Session1651395119134', 'Session1651385125268', 'Session1651325506409', 'Session1651324844104', 'Session1651384965215', 'Session1651336129305', 'Session1651326307678', 'Session1651324863470'}
+01-May-22 20:36:01 - Completed Run.
+
+01-May-22 20:48:02 - Beginning Manage Project Directories run
+01-May-22 20:48:02 - RCS02L - Session1651324656443 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:48:02 - RCS02L - Session1651304449313 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:48:02 - RCS02R - Session1651324650818 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:48:02 - RCS02R - Session1651304449877 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:48:02 - RCS16L - Session1651414078528 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:48:02 - RCS16L - Session1651414116394 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:48:02 - RCS16R - Session1651414112687 does not have a directory in RC+S Patient Unsynced Data directory tree
+01-May-22 20:48:02 - Removed following sessions from cache: RCS02L - set()
+01-May-22 20:48:02 - Removed following sessions from cache: RCS02R - set()
+01-May-22 20:48:02 - Removed following sessions from cache: RCS16L - set()
+01-May-22 20:48:02 - Removed following sessions from cache: RCS16R - set()
+01-May-22 20:48:02 - Completed Run.
+
