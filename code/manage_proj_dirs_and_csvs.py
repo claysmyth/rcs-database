@@ -150,6 +150,7 @@ if __name__ == "__main__":
 
     # Loop through each session for each RCS device
     sessions_to_keep_cached = {}
+    update_sessionTypes = []
     for rcs, session_list in cache_data.items():
         sessions_to_keep_cached[rcs] = []
         #unsynced_rcs_filepath_complete = os.path.join(UNSYNCED_BASE_PATH, f'{rcs[:-1]} Un-Synced Data', UNSYNCED_SUMMIT_NESTED_PATH, rcs)
@@ -179,11 +180,16 @@ if __name__ == "__main__":
 
 
                 if os.path.isfile(os.path.join(session_jsons_path, 'EventLog.json')):
-                    with open(os.path.join(session_jsons_path, 'EventLog.json')) as f:
-                        session_eventLog = json.load(f)
+                    try:
+                        with open(os.path.join(session_jsons_path, 'EventLog.json')) as f:
+                            session_eventLog = json.load(f)
+                    except:
+                        logging.info('%s - %s has malformed EventLog.json. Will stay in cache.', rcs, session)
+                        sessions_to_keep_cached[rcs].append(session)
+                        continue
                 
                 
-                update_sessionTypes = add_sessionType_to_project(session_eventLog, project_sessionTypes, logging)
+                update_sessionTypes.append(add_sessionType_to_project(session_eventLog, project_sessionTypes, logging))
 
                 sessionTypes, associated_projs, keep_cached = get_projs_and_sessionTypes(session_eventLog,
                                                                                          project_sessionTypes)
@@ -200,7 +206,6 @@ if __name__ == "__main__":
                     create_session_symlinks(rcs, session, session_filepath, sessionTypes, associated_projs, project_sessionTypes,
                                             project_basePaths)
 
-                # TODO: Protect against duplicates
                 # Note: Session will be added to project CSV even if there is no sessionTypes logged
                 if associated_projs:
                     add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_jsons_path,
@@ -209,17 +214,22 @@ if __name__ == "__main__":
             else:
                 # If there is not directory found for this session in RC+S Patient Unsynced Data, then session remains in cache
                 sessions_to_keep_cached[rcs].append(session)
-                logging.warning('%s does not have a directory in RC+S Patient Unsynced Data directory tree', session)
+                logging.warning('%s - %s does not have a directory in RC+S Patient Unsynced Data directory tree', rcs, session)
 
     for proj, df in project_dfs.items():
         path = project_csv_paths[proj]
         df.to_csv(path)
 
     with open(CACHED_SESSIONS_FILE_PATH, 'w') as g:
-        json.dump(update_cache(sessions_to_keep_cached), g)
+        updated_cache = update_cache(sessions_to_keep_cached)
+        for rcs, sessions in cache_data.items():
+            if rcs in updated_cache.keys():
+                logging.info('Removed following sessions from cache: %s - %s', rcs, set(sessions).difference(set(updated_cache[rcs])))
+            else:
+                logging.info('Removed following sessions from cache: %s - %s', rcs, sessions)
+        json.dump(updated_cache, g)
     
-    if update_sessionTypes:
-        print('executed')
+    if any(update_sessionTypes):
         # Read old project data json
         with open(PROJECT_SESSIONTYPES_PATH) as p:
             project_data_to_update = json.load(p)

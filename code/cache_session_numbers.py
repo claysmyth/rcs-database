@@ -2,10 +2,12 @@ from json.tool import main
 import json
 import os
 import fnmatch
+import logging
 
 PATIENT_DATA_PATHS_FILE = './database_jsons/patient_directory_names.json'
 CACHE_FILE_PATH = './database_jsons/cached_sessions.json'
 DATABASE_BOOLEAN_PATH = './database_jsons/database_boolean.json'
+CACHE_LOG = './database_jsons/cache_log.log'
 
 def get_session_numbers():
     patient_dict = {}
@@ -25,7 +27,10 @@ def get_session_numbers():
     return patient_dict
 
 if __name__ == "__main__":
-    # Cache data
+    logging.basicConfig(filename=CACHE_LOG, filemode='a', level=logging.INFO, 
+                            format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+    
+    logging.info("Beginning Caching Run")
 
     # Get cache
     with open(CACHE_FILE_PATH) as g:
@@ -34,14 +39,19 @@ if __name__ == "__main__":
     patient_dict = get_session_numbers()
 
     # Update cache with new session lists for each patient. Merges with existing list  (no duplicates), instead of replacing. 
-    for key, sessions in patient_dict.items():
-        if key in cache_data.keys():
-            [cache_data[key].append(session) for session in sessions if session not in cache_data[key]]
+    for device, sessions in patient_dict.items():
+        if device in cache_data.keys():
+            new_sessions = [session for session in sessions if session not in cache_data[device]]
+            cache_data[device].extend(new_sessions)
+            if new_sessions: logging.info("Caching session(s): %s - %s", device, [session for session in sessions if session not in cache_data[device]])
         else:
-            cache_data[key] = sessions
+            cache_data[device] = sessions
+            if sessions: logging.info("Caching session(s): %s - %s", device, sessions)
 
     # Write to jsons
     with open(CACHE_FILE_PATH, 'w') as out_cache:
         json.dump(cache_data, out_cache)
+
+    logging.info("Completed Caching Run.\n")
     
 
