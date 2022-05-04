@@ -11,7 +11,7 @@ cd $database_dir
 #conda deactivate
 
 # Moves session data from synced to unsynced
-cd /usr/local/MATLAB/R2021b/bin
+cd /usr/local/MATLAB/R2022a/bin
 ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
 ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
 
