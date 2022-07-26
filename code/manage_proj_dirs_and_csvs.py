@@ -29,6 +29,12 @@ def add_sessionType_to_project(session_eventLog, project_sessionTypes, logging):
                     sessionType_added = True
     return sessionType_added
 
+# find all projects that have this sessiontype as a keyword
+def get_associated_projects(sessionTypes, project_sessionTypes):
+    associated_projs_tmp = []
+    for key, value in project_sessionTypes.items():
+        if set(value) & set(sessionTypes): associated_projs_tmp.extend([key])
+    return associated_projs_tmp
 
 def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
     # Returns found sessionTypes
@@ -44,21 +50,14 @@ def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
 
         return list(set(sessionTypes_tmp))
 
-    # Searches user inputs if user is trying to add this session to any, or multiple, project, without related
-    # project to sessiontype keywords
+    # Searches user inputs if user is trying to add this session to any, or multiple, project(s), without related
+    # sessiontype keywords
     def find_project_in_eventlog(session_eventLog, project_sessionTypes):
         associated_projs_tmp = []
         for entry in session_eventLog:
             if entry['Event']['EventType'] == 'extra_comments':
                 projs_tmp = list(filter(None, re.split('[^a-zA-Z_]', entry['Event']["EventSubType"])))
                 associated_projs_tmp.extend([proj for proj in projs_tmp if proj in project_sessionTypes.keys()])
-        return associated_projs_tmp
-
-    # find all projects that have this sessiontype as a keyword
-    def get_associated_projects(sessionTypes, project_sessionTypes):
-        associated_projs_tmp = []
-        for key, value in project_sessionTypes.items():
-            if set(value) & set(sessionTypes): associated_projs_tmp.extend([key])
         return associated_projs_tmp
 
     # sessionTypes is a list of all the sessiontype labels the experimentor associated with this recording session
@@ -82,7 +81,7 @@ def get_projs_and_sessionTypes(session_eventLog, project_sessionTypes):
 
 # Creates session symlink in associated project directory trees
 def create_session_symlinks(rcs, session_name, session_filepath, sessionTypes, associated_projs, project_sessionTypes, project_basePaths):
-    # Check if session symlink already exists somewhere
+    # Check if session symlink already exists
     # If not, create symlink in each relevant project
     for proj in associated_projs:
         rcs_dir = os.path.join(project_basePaths[proj], rcs)
@@ -108,8 +107,8 @@ def add_row_to_project_df(rcs, project_dfs, session, session_eventLog, session_j
         if proj in project_dfs.keys():
             proj_df = project_dfs[proj]
             # Protects against duplicate entries
-            if session not in proj_df[SESSIONS_COLUMN].values: 
-                proj_df.loc[len(proj_df)] = session_csv_info
+            if session not in proj_df[SESSIONS_COLUMN].values:
+                proj_df.loc[len(proj_df.index)] = session_csv_info
         else:
             project_dfs[proj] = pd.DataFrame(session_csv_info, index=[0]).reindex(columns=COLUMN_ORDER)
         
@@ -145,7 +144,7 @@ if __name__ == "__main__":
                                  [value["csvPath"] for value in project_data.values()]))
 
     # Get each projects CSV as a pandas DataFrame
-    project_dfs = {key: pd.read_csv(value["csvPath"], index_col=0) for key, value in project_data.items() if os.path.isfile(value["csvPath"])}
+    project_dfs = {key: pd.read_csv(value["csvPath"], index_col=0).reset_index(drop=True) for key, value in project_data.items() if os.path.isfile(value["csvPath"])}
     
 
     # Loop through each session for each RCS device
@@ -216,6 +215,7 @@ if __name__ == "__main__":
                 sessions_to_keep_cached[rcs].append(session)
                 logging.warning('%s - %s does not have a directory in RC+S Patient Unsynced Data directory tree', rcs, session)
 
+    # Update Summary CSVs for each project
     for proj, df in project_dfs.items():
         path = project_csv_paths[proj]
         df.to_csv(path)
@@ -224,6 +224,7 @@ if __name__ == "__main__":
         updated_cache = update_cache(sessions_to_keep_cached)
         for rcs, sessions in cache_data.items():
             if rcs in updated_cache.keys():
+                # Display sessions that do not remain in cache as 'Removed'
                 removed_sessions = set(sessions).difference(set(updated_cache[rcs]))
                 if removed_sessions: logging.info('Removed following sessions from cache: %s - %s', rcs, removed_sessions)
             else:
