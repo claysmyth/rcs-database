@@ -13,6 +13,8 @@ UNSYNCED_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synce
 UNSYNCED_SUMMIT_NESTED_PATH = '/SummitData/SummitContinuousBilateralStreaming/'
 PROJECTS_BASE_PATH = '/media/dropbox_hdd/Starr Lab Dropbox/Projects/'
 
+"""This function takes a json of rcs devices + sessions and sessiontypes. It adds these sessions to the corresponding project-sessiontype directories and summary CSV."""
+
 if  __name__ == "__main__":
     """ Terminal call of script expects sys.argv[1] as json filepath with form:
             {

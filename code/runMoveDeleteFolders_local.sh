@@ -29,7 +29,8 @@ cd $database_dir
 # Everything below is from Ro'ee's databasing. Deprecated since he left the lab in 07/2021
 
 # print report log 
-# ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/database_log.log" -batch "run /home/starrlab/bin/code/rcs-database-main/code/create_database_from_device_settings_files.m"
+cd /usr/local/MATLAB/R2022a/bin
+./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/database_log.log" -batch "run /home/starrlab/bin/code/rcs-database/code/create_database_from_device_settings_files.m"
 
 # print reports from device settings 
 # ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/report_log.log" -batch "run /home/starrlab/bin/code/rcs-database-main/code/print_report_from_device_settings_database_file_per_patient.m"
