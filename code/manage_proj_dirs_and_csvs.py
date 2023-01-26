@@ -93,6 +93,7 @@ def create_session_symlinks(rcs, session_name, session_filepath, sessionTypes, a
                 os.mkdir(sessiontype_proj_dir)
             symlink = os.path.join(sessiontype_proj_dir, session_name)
             if not os.path.islink(symlink): os.symlink(session_filepath, symlink)
+            logging.info('Added %s: %s to Project: %s', rcs, session, project_basePaths[proj])
 
 
 # Adds a row for each session to the project summary csv, which is stored as pandas dataframe, with attributes that describe each corresponding session

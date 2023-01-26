@@ -24,11 +24,13 @@
         "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Clay_db_demo",
         "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Clay_db_demo/demo_summary.csv"
     },
-    "EvokedPotential": {
+    "EvokedPotentials": {
         "SessionTypes": [
             "EvokedPotentials",
+            "EvokedPotential",
             "Evoked Potentials",
             "evokedpotentials",
+            "evokedpotential",
             "evoked potentials",
             "Autorun",
             "autorun"

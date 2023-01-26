@@ -5572,3 +5572,138 @@
 23-Jan-23 02:31:22 - Removed following sessions from cache: RCS12L - ['Session1674400601455', 'Session1674398500670']
 23-Jan-23 02:31:22 - Completed Run.
 
+24-Jan-23 02:31:26 - Beginning Manage Project Directories run
+24-Jan-23 02:31:26 - RCS02L - Session1663514899614 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:26 - RCS02L - Session1666640226897 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:26 - RCS02R - Session1663514900755 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS02R - Session1666640226896 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15L - Session1663786245044 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15L - Session1664401194751 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15L - Session1664409384566 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15L - Session1666119256979 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15L - Session1666407255183 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15L - Session1673892810965 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15L - Session1674333492066 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15R - Session1663786230773 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15R - Session1664409371076 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15R - Session1664401175629 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15R - Session1666419875310 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15R - Session1668186231720 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15R - Session1668482019901 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15R - Session1673221002381 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15R - Session1673892814975 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS15R - Session1674333433265 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS14L - Session1666983110343 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS14L - Session1671035782640 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS11L - Session1673457040139 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - RCS11R - Session1673457050220 has malformed EventLog.json. Will stay in cache.
+24-Jan-23 02:31:27 - Completed Run.
+
+25-Jan-23 02:31:26 - Beginning Manage Project Directories run
+25-Jan-23 02:31:26 - RCS02L - Session1663514899614 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS02L - Session1666640226897 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS02R - Session1663514900755 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS02R - Session1666640226896 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15L - Session1663786245044 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15L - Session1664401194751 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15L - Session1664409384566 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15L - Session1666119256979 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15L - Session1666407255183 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15L - Session1673892810965 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15L - Session1674333492066 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15R - Session1663786230773 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15R - Session1664409371076 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15R - Session1664401175629 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15R - Session1666419875310 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15R - Session1668186231720 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15R - Session1668482019901 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15R - Session1673221002381 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15R - Session1673892814975 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS15R - Session1674333433265 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:26 - RCS14L - Session1666983110343 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:27 - RCS14L - Session1671035782640 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:27 - RCS11L - Session1673457040139 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:27 - RCS11R - Session1673457050220 has malformed EventLog.json. Will stay in cache.
+25-Jan-23 02:31:27 - Completed Run.
+
+26-Jan-23 02:31:30 - Beginning Manage Project Directories run
+26-Jan-23 02:31:30 - RCS02L - Session1663514899614 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:30 - RCS02L - Session1666640226897 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:30 - RCS02R - Session1663514900755 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:30 - RCS02R - Session1666640226896 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:30 - RCS15L - Session1663786245044 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:30 - RCS15L - Session1664401194751 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:30 - RCS15L - Session1664409384566 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:30 - RCS15L - Session1666119256979 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS15L - Session1666407255183 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS15L - Session1673892810965 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS15R - Session1663786230773 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS15R - Session1664409371076 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS15R - Session1664401175629 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS15R - Session1666419875310 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS15R - Session1668186231720 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS15R - Session1668482019901 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS15R - Session1673221002381 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS15R - Session1673892814975 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS14L - Session1666983110343 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS14L - Session1671035782640 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS11L - Session1673457040139 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - RCS11R - Session1673457050220 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 02:31:31 - Removed following sessions from cache: RCS15L - {'Session1674333492066'}
+26-Jan-23 02:31:31 - Removed following sessions from cache: RCS15R - {'Session1674333433265'}
+26-Jan-23 02:31:31 - Completed Run.
+
+26-Jan-23 10:08:40 - Beginning Manage Project Directories run
+26-Jan-23 10:08:40 - RCS02L - Session1663514899614 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS02L - Session1666640226897 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS02R - Session1663514900755 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS02R - Session1666640226896 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15L - Session1663786245044 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15L - Session1664401194751 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15L - Session1664409384566 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15L - Session1666119256979 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15L - Session1666407255183 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15L - Session1673892810965 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15R - Session1663786230773 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15R - Session1664409371076 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15R - Session1664401175629 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15R - Session1666419875310 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15R - Session1668186231720 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15R - Session1668482019901 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15R - Session1673221002381 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS15R - Session1673892814975 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS14L - Session1666983110343 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS14L - Session1671035782640 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS11L - Session1673457040139 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - RCS11R - Session1673457050220 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:08:40 - Added Session1674683234727 to Project /media/dropbox_hdd/Starr Lab Dropbox/Projects/EvokedPotentials
+26-Jan-23 10:08:40 - Removed following sessions from cache: RCS16L - ['Session1674683234727']
+26-Jan-23 10:08:40 - Completed Run.
+
+26-Jan-23 10:15:41 - Beginning Manage Project Directories run
+26-Jan-23 10:15:41 - RCS02L - Session1663514899614 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS02L - Session1666640226897 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS02R - Session1663514900755 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS02R - Session1666640226896 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15L - Session1663786245044 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15L - Session1664401194751 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15L - Session1664409384566 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15L - Session1666119256979 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15L - Session1666407255183 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15L - Session1673892810965 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15R - Session1663786230773 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15R - Session1664409371076 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15R - Session1664401175629 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15R - Session1666419875310 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15R - Session1668186231720 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15R - Session1668482019901 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15R - Session1673221002381 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS15R - Session1673892814975 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS14L - Session1666983110343 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS14L - Session1671035782640 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS11L - Session1673457040139 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - RCS11R - Session1673457050220 has malformed EventLog.json. Will stay in cache.
+26-Jan-23 10:15:41 - Added RCS16L: Session1674683234727 to Project: /media/dropbox_hdd/Starr Lab Dropbox/Projects/EvokedPotentials
+26-Jan-23 10:15:41 - Removed following sessions from cache: RCS16L - ['Session1674683234727']
+26-Jan-23 10:15:41 - Completed Run.
+
