@@ -37,5 +37,12 @@
         ],
         "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/EvokedPotentials",
         "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/EvokedPotentials/EvokedPotentials.csv"
+    },
+    "SleepStimOffset": {
+        "SessionTypes": [
+            "Stim Offset"
+        ],
+        "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/SleepStimOffset",
+        "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/SleepStimOffset/SleepStimOffset.csv"
     }
 }
