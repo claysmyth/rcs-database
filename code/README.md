@@ -23,4 +23,4 @@ Type one of the following in the 'Comment' box of the Report window during as ac
     * "Note: 'user comment' "   
     * "Notes: 'user comment' "  
     * "note: 'user comment'  "  
-    * "notes:''user comment'  "  
+    * "notes: 'user comment'  "  
