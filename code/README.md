@@ -10,7 +10,7 @@ To create a new project, create an appropriately named directory in '/dropbox_hd
 
 To add new session-types to an existing project, either:  
     1. Edit './database_jsons/project_sessiontype_keywords.json'  
-    2. In an SCBS session, add the comment "Add '<sessionType>' to '<project>'" in the 'comment' box of the Report window.
+    2. In an SCBS session, add the comment "Add {sessionType} to {project}" in the 'comment' box of the Report window.
 
 It is also possible to explicitly add a session to a Project without a session-type. Simply:
     1. In an SCBS session, enter "<Project Name>" into the 'comment' box of the Report window.
