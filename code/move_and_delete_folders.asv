@@ -53,10 +53,9 @@ for p = 1:length(patdirs)% loop on patient directories
                 fprintf('[%0.3d] \t %s\n',ff,times(ff));
             end
             if ~isempty(sessionsfound)
-                % Only move files that have been started at least 8 hours
-                % ago. File mover runs at 2:15 pm. So files created before
-                % 6:15 am will be moved.
-                timeBefore = (datetime(datevec(now))-hours(8));
+                % only move files that have been started at least 6 hours
+                % ago. File mover runs at 2:15 pm.
+                timeBefore = (datetime(datevec(now))-hours(6));
                 timeBefore.TimeZone = 'America/Los_Angeles';
                 idxkeep = times < timeBefore;
                 sessionsfound = sessionsfound(idxkeep);

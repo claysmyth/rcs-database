@@ -16,8 +16,12 @@ def get_end_time(session_jsons_path):
     deviceSettings_path = os.path.join(session_jsons_path, 'DeviceSettings.json')
     if os.path.isfile(deviceSettings_path):
         with open(deviceSettings_path) as f:
-            deviceSettings = json.load(f)
-            session_end_unix_time = deviceSettings[-1]['RecordInfo']['HostUnixTime']
+            try:
+                deviceSettings = json.load(f)
+                session_end_unix_time = deviceSettings[-1]['RecordInfo']['HostUnixTime']
+            except Exception as error:
+                print(f"Could not load: {session_jsons_path}/DeviceSettings.json because \n {error}")
+                return 'WARNING: No JSON data found.'
         # Drop milliseconds from unix_time
         session_end_unix_time = round(session_end_unix_time/1000)
         return datetime.fromtimestamp(session_end_unix_time).strftime('%m-%d-%Y %H:%M:%S')

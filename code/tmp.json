@@ -1,11 +1,18 @@
 
 {
-    "RCS07L": {
-        "Session1658477800898": ["Overnight"],  
-        "Session1658510005169": ["Autorun"]
+    "RCS18L": {
+        "Session1694613455191": ["Week2Midweek"],
+        "Session1694620454876": ["Week2Midweek"],
+        "Session1694731666444": ["Week2Midweek"],
+        "Session1694774634747": ["Week2Day7"],
+        "Session1694814277953": ["Week2Day7"],
+        "Session1694861954708": ["Week3Day1"]
     },
-    "RCS07R": {
-        "Session1658477797024": ["Overnight"], 
-        "Session1658510000303": ["Autorun"]
+    "RCS18R": {
+        "Session1694613445710": ["Week2Midweek"],
+        "Session1694731701062": ["Week2Midweek"],
+        "Session1694774647958": ["Week2Day7"],
+        "Session1694814311016": ["Week2Day7"],
+        "Session1694861976540": ["Week3Day1"]
     }
 }

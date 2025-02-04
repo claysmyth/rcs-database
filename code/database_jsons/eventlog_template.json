@@ -1,0 +1,19 @@
+[
+    {
+        "RecordInfo":
+        {
+            "ApiVer": "1.6.0.0",
+            "DeviceId": "",
+            "HostUnixTime": 0,
+            "SessionId": ""
+        },
+        "Event":
+        {
+            "EventName": "UserCustom",
+            "EventSubType": "",
+            "EventType": "sessiontype",
+            "UnixOffsetTime": 0,
+            "UnixOnsetTime": 0
+        }
+    }
+]

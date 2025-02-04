@@ -84,16 +84,26 @@ def create_session_symlinks(rcs, session_name, session_filepath, sessionTypes, a
     # Check if session symlink already exists
     # If not, create symlink in each relevant project
     for proj in associated_projs:
-        rcs_dir = os.path.join(project_basePaths[proj], rcs)
-        if not os.path.isdir(rcs_dir):
-            os.mkdir(rcs_dir)
+        # rcs_dir = os.path.join(project_basePaths[proj], rcs)
+        # if not os.path.isdir(rcs_dir):
+        #     os.mkdir(rcs_dir)
         for sessiontype in list(set(sessionTypes) & set(project_sessionTypes[proj])):
-            sessiontype_proj_dir = os.path.join(rcs_dir, sessiontype)
+            # sessiontype_proj_dir = os.path.join(rcs_dir, sessiontype)
+
+            # Make Session Type Directory
+            sessiontype_proj_dir = os.path.join(project_basePaths[proj], sessiontype)
             if not os.path.isdir(sessiontype_proj_dir):
                 os.mkdir(sessiontype_proj_dir)
-            symlink = os.path.join(sessiontype_proj_dir, session_name)
+            
+            # Make RCS Device directory
+            rcs_dir = os.path.join(sessiontype_proj_dir, rcs)
+            if not os.path.isdir(rcs_dir):
+                os.mkdir(rcs_dir)
+
+            # Create symlink to Session directory in the unsynced repository
+            symlink = os.path.join(rcs_dir, session_name)
             if not os.path.islink(symlink): os.symlink(session_filepath, symlink)
-            logging.info('Added %s: %s to Project: %s', rcs, session, project_basePaths[proj])
+            logging.info('Added %s: %s to Project: %s', rcs, session_name, project_basePaths[proj])
 
 
 # Adds a row for each session to the project summary csv, which is stored as pandas dataframe, with attributes that describe each corresponding session

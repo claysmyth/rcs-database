@@ -36,6 +36,8 @@
         "RCS19L": "/media/dropbox_hdd/Starr Lab Dropbox/RCS19/SummitData/SummitContinuousBilateralStreaming/RCS19L",
         "RCS19R": "/media/dropbox_hdd/Starr Lab Dropbox/RCS19/SummitData/SummitContinuousBilateralStreaming/RCS19R",
         "RCS20L": "/media/dropbox_hdd/Starr Lab Dropbox/RCS20/SummitData/SummitContinuousBilateralStreaming/RCS20L",
-        "RCS20R": "/media/dropbox_hdd/Starr Lab Dropbox/RCS20/SummitData/SummitContinuousBilateralStreaming/RCS20R"
+        "RCS20R": "/media/dropbox_hdd/Starr Lab Dropbox/RCS20/SummitData/SummitContinuousBilateralStreaming/RCS20R",
+        "GaitRCS01L": "/media/dropbox_hdd/Starr Lab Dropbox/GaitRCS01/SummitData/SummitContinuousBilateralStreaming/GaitRCS01L",
+        "GaitRCS01R": "/media/dropbox_hdd/Starr Lab Dropbox/GaitRCS01/SummitData/SummitContinuousBilateralStreaming/GaitRCS01R"
     }
 }

@@ -1,6 +1,8 @@
 {
-    "Sleep": {
-        "SessionTypes": [
+    "Sleep":
+    {
+        "SessionTypes":
+        [
             "Overnight",
             "overnight",
             "Autorun",
@@ -9,40 +11,122 @@
         "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Sleep",
         "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Sleep/Sleep_Summary.csv"
     },
-    "adaptiveDBS": {
-        "SessionTypes": [],
+    "adaptiveDBS":
+    {
+        "SessionTypes":
+        [],
         "BasePath": "",
         "csvPath": ""
     },
-    "Clay_db_demo": {
-        "SessionTypes": [
-            "ON Med",
-            "OFF Med",
+    "Clay_db_demo":
+    {
+        "SessionTypes":
+        [
             "Something else",
             "Something new"
         ],
         "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Clay_db_demo",
         "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Clay_db_demo/demo_summary.csv"
     },
-    "EvokedPotentials": {
-        "SessionTypes": [
+    "EvokedPotentials":
+    {
+        "SessionTypes":
+        [
             "EvokedPotentials",
             "EvokedPotential",
             "Evoked Potentials",
             "evokedpotentials",
             "evokedpotential",
-            "evoked potentials",
-            "Autorun",
-            "autorun"
+            "evoked potentials"
         ],
         "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/EvokedPotentials",
         "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/EvokedPotentials/EvokedPotentials.csv"
     },
-    "SleepStimOffset": {
-        "SessionTypes": [
+    "SleepStimOffset":
+    {
+        "SessionTypes":
+        [
             "Stim Offset"
         ],
         "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/SleepStimOffset",
         "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/SleepStimOffset/SleepStimOffset.csv"
+    },
+    "Step7Debug":
+    {
+        "SessionTypes":
+        [
+            "Step 7 Debug",
+            "Step7Debug"
+        ],
+        "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Step7Debug",
+        "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Step7Debug/Step7Debug.csv"
+    },
+    "Step7":
+    {
+        "SessionTypes":
+        [
+            "Week1Day1",
+            "Week1Midweek",
+            "Week1Day7",
+            "Week2Day1",
+            "Week2Midweek",
+            "Week2Day7",
+            "Week3Day1",
+            "Week3Midweek",
+            "Week3Day7",
+            "Week4Day1",
+            "Week4Midweek",
+            "Week4Day7",
+            "Week5Day1",
+            "Week5Midweek",
+            "Week5Day7",
+            "Week6Day1",
+            "Week6Midweek",
+            "Week6Day7",
+            "Week7Day1",
+            "Week7Midweek",
+            "Week7Day7",
+            "Week8Day1",
+            "Week8Midweek",
+            "Week8Day7"
+        ],
+        "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Step7",
+        "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Step7/Step7.csv"
+    },
+    "Sleep_aDBS":
+    {
+        "SessionTypes":
+        [
+            "Baseline",
+            "baseline",
+            "sleep_profiler",
+            "bayes_opt"
+        ],
+        "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Sleep_aDBS",
+        "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Sleep_aDBS/Sleep_aDBS_Summary.csv"
+    },
+    "Weill":
+    {
+        "SessionTypes":
+        [
+            "Weill-misc",
+            "Weill-low-stim",
+            "Weill-opt-stim",
+            "Weill-high-stim"
+        ],
+        "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Weill",
+        "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Weill/Weill_Summary.csv"
+    },
+    "moveDBS":
+    {
+        "SessionTypes":
+        [
+            "moveDBS-misc",
+            "moveDBS-aim-1a",
+            "moveDBS-aim-1b",
+            "moveDBS-aim-2"
+        ],
+        "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/moveDBS",
+        "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/moveDBS/moveDBS_Summary.csv"
     }
 }
