@@ -6,8 +6,8 @@ import warnings
 import re
 
 SESSIONS_TO_ADD_SESSIONTYPES_PATH = '/home/karenabalagula/add_sessiontypes_folder/'
-PATIENT_DATA_PATHS_FILE = './database_jsons/patient_directory_names.json'
-EVENT_TEMPLATE_PATH = './database_jsons/eventlog_template.json'
+PATIENT_DATA_PATHS_FILE = '/home/starrlab/bin/code/rcs-database/code/database_jsons/patient_directory_names.json'
+EVENT_TEMPLATE_PATH = '/home/starrlab/bin/code/rcs-database/code/database_jsons/eventlog_template.json'
 
 def add_sessiontype_de_novo(json_file_path, sessiontype):
     

@@ -99,8 +99,14 @@
         [
             "Baseline",
             "baseline",
+            "baseline_2",
             "sleep_profiler",
-            "bayes_opt"
+            "sleep_profiler_2",
+            "sleep_profiler_prelim",
+            "bayes_opt",
+            "bayes_opt_model_check",
+            "stage_3",
+            "stage_3_pilot"
         ],
         "BasePath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Sleep_aDBS",
         "csvPath": "/media/dropbox_hdd/Starr Lab Dropbox/Projects/Sleep_aDBS/Sleep_aDBS_Summary.csv"

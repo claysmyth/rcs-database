@@ -1,0 +1,388 @@
+[INFO] 2025-08-11 15:53:16,677 — 
+[INFO] 2025-08-11 15:53:16,677 — --- Starting Move and Archive script in DRY RUN mode ---
+[INFO] 2025-08-11 15:53:16,677 — 
+[WARNING] 2025-08-11 15:53:16,678 — No subject directories found. Exiting.
+[INFO] 2025-08-11 15:55:34,254 — 
+[INFO] 2025-08-11 15:55:34,254 — --- Starting Move and Archive script in DRY RUN mode ---
+[INFO] 2025-08-11 15:55:34,254 — 
+[WARNING] 2025-08-11 15:55:34,255 — No subject directories found. Exiting.
+[INFO] 2025-08-11 16:00:50,271 — 
+[INFO] 2025-08-11 16:00:50,271 — --- Starting Move and Archive script in DRY RUN mode ---
+[INFO] 2025-08-11 16:00:50,271 — 
+[INFO] 2025-08-11 16:00:50,274 — Found 36 subjects to process
+[INFO] 2025-08-11 16:00:50,274 — Processing subject: RCS01L with 1 source path(s)
+[INFO] 2025-08-11 16:00:50,274 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS01/SummitData/SummitContinuousBilateralStreaming/RCS01L
+[INFO] 2025-08-11 16:00:50,274 — Processing subject: RCS01R with 1 source path(s)
+[INFO] 2025-08-11 16:00:50,275 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS01/SummitData/SummitContinuousBilateralStreaming/RCS01R
+[INFO] 2025-08-11 16:00:50,275 — Processing subject: RCS03L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,275 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS03/SummitData/StarrLab/RCS03L
+[INFO] 2025-08-11 16:00:50,275 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS03/SummitData/SummitContinuousBilateralStreaming/RCS03L
+[INFO] 2025-08-11 16:00:50,275 — Processing subject: RCS03R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,275 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS03/SummitData/StarrLab/RCS03R
+[INFO] 2025-08-11 16:00:50,275 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS03/SummitData/SummitContinuousBilateralStreaming/RCS03R
+[INFO] 2025-08-11 16:00:50,275 — Processing subject: RCS04L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,275 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS04/SummitData/StarrLab/RCS04L
+[INFO] 2025-08-11 16:00:50,276 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS04/SummitData/SummitContinuousBilateralStreaming/RCS04L
+[INFO] 2025-08-11 16:00:50,276 — Processing subject: RCS04R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,276 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS04/SummitData/StarrLab/RCS04R
+[INFO] 2025-08-11 16:00:50,276 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS04/SummitData/SummitContinuousBilateralStreaming/RCS04R
+[INFO] 2025-08-11 16:00:50,276 — Processing subject: RCS05L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,276 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS05/SummitData/StarrLab/RCS05L
+[INFO] 2025-08-11 16:00:50,276 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS05/SummitData/SummitContinuousBilateralStreaming/RCS05L
+[INFO] 2025-08-11 16:00:50,276 — Processing subject: RCS05R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,277 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS05/SummitData/StarrLab/RCS05R
+[INFO] 2025-08-11 16:00:50,277 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS05/SummitData/SummitContinuousBilateralStreaming/RCS05R
+[INFO] 2025-08-11 16:00:50,277 — Processing subject: RCS06L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,277 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS06/SummitData/StarrLab/RCS06L
+[INFO] 2025-08-11 16:00:50,277 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS06/SummitData/SummitContinuousBilateralStreaming/RCS06L
+[INFO] 2025-08-11 16:00:50,277 — Processing subject: RCS06R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,277 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS06/SummitData/StarrLab/RCS06R
+[INFO] 2025-08-11 16:00:50,277 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS06/SummitData/SummitContinuousBilateralStreaming/RCS06R
+[INFO] 2025-08-11 16:00:50,277 — Processing subject: RCS07L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,277 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS07/SummitData/StarrLab/RCS07L
+[INFO] 2025-08-11 16:00:50,278 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS07/SummitData/SummitContinuousBilateralStreaming/RCS07L
+[INFO] 2025-08-11 16:00:50,278 — Processing subject: RCS07R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,278 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS07/SummitData/StarrLab/RCS07R
+[INFO] 2025-08-11 16:00:50,278 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS07/SummitData/SummitContinuousBilateralStreaming/RCS07R
+[INFO] 2025-08-11 16:00:50,278 — Processing subject: RCS08L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,278 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS08/SummitData/StarrLab/RCS08L
+[INFO] 2025-08-11 16:00:50,278 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS08/SummitData/SummitContinuousBilateralStreaming/RCS08L
+[INFO] 2025-08-11 16:00:50,278 — Processing subject: RCS08R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,278 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS08/SummitData/StarrLab/RCS08R
+[INFO] 2025-08-11 16:00:50,279 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS08/SummitData/SummitContinuousBilateralStreaming/RCS08R
+[INFO] 2025-08-11 16:00:50,279 — Processing subject: RCS09L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,279 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS09/SummitData/StarrLab/RCS09L
+[INFO] 2025-08-11 16:00:50,279 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS09/SummitData/SummitContinuousBilateralStreaming/RCS09L
+[INFO] 2025-08-11 16:00:50,279 — Processing subject: RCS09R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,279 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS09/SummitData/StarrLab/RCS09R
+[INFO] 2025-08-11 16:00:50,279 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS09/SummitData/SummitContinuousBilateralStreaming/RCS09R
+[INFO] 2025-08-11 16:00:50,279 — Processing subject: RCS10L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,279 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS10/SummitData/StarrLab/RCS10L
+[INFO] 2025-08-11 16:00:50,280 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS10/SummitData/SummitContinuousBilateralStreaming/RCS10L
+[INFO] 2025-08-11 16:00:50,280 — Processing subject: RCS10R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,280 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS10/SummitData/StarrLab/RCS10R
+[INFO] 2025-08-11 16:00:50,280 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS10/SummitData/SummitContinuousBilateralStreaming/RCS10R
+[INFO] 2025-08-11 16:00:50,280 — Processing subject: RCS11L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,280 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS11/SummitData/StarrLab/RCS11L
+[INFO] 2025-08-11 16:00:50,280 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS11/SummitData/SummitContinuousBilateralStreaming/RCS11L
+[INFO] 2025-08-11 16:00:50,280 — Processing subject: RCS11R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,280 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS11/SummitData/StarrLab/RCS11R
+[INFO] 2025-08-11 16:00:50,281 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS11/SummitData/SummitContinuousBilateralStreaming/RCS11R
+[INFO] 2025-08-11 16:00:50,281 — Processing subject: RCS12L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,281 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS12/SummitData/StarrLab/RCS12L
+[INFO] 2025-08-11 16:00:50,281 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS12/SummitData/SummitContinuousBilateralStreaming/RCS12L
+[INFO] 2025-08-11 16:00:50,281 — Processing subject: RCS12R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,281 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS12/SummitData/StarrLab/RCS12R
+[INFO] 2025-08-11 16:00:50,281 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS12/SummitData/SummitContinuousBilateralStreaming/RCS12R
+[INFO] 2025-08-11 16:00:50,281 — Processing subject: RCS13R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,281 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS13/SummitData/StarrLab/RCS13R
+[INFO] 2025-08-11 16:00:50,281 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS13/SummitData/SummitContinuousBilateralStreaming/RCS13R
+[INFO] 2025-08-11 16:00:50,282 — Processing subject: RCS14L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,282 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS14/SummitData/StarrLab/RCS14L
+[INFO] 2025-08-11 16:00:50,282 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS14/SummitData/SummitContinuousBilateralStreaming/RCS14L
+[INFO] 2025-08-11 16:00:50,282 — Processing subject: RCS15L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,282 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS15/SummitData/StarrLab/RCS15L
+[INFO] 2025-08-11 16:00:50,282 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS15/SummitData/SummitContinuousBilateralStreaming/RCS15L
+[INFO] 2025-08-11 16:00:50,282 — Processing subject: RCS15R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,282 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS15/SummitData/StarrLab/RCS15R
+[INFO] 2025-08-11 16:00:50,282 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS15/SummitData/SummitContinuousBilateralStreaming/RCS15R
+[INFO] 2025-08-11 16:00:50,283 — Processing subject: RCS16L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,283 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS16/SummitData/StarrLab/RCS16L
+[INFO] 2025-08-11 16:00:50,283 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS16/SummitData/SummitContinuousBilateralStreaming/RCS16L
+[INFO] 2025-08-11 16:00:50,283 — Processing subject: RCS16R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,283 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS16/SummitData/StarrLab/RCS16R
+[INFO] 2025-08-11 16:00:50,283 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS16/SummitData/SummitContinuousBilateralStreaming/RCS16R
+[INFO] 2025-08-11 16:00:50,283 — Processing subject: RCS17L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,283 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS17/SummitData/StarrLab/RCS17L
+[INFO] 2025-08-11 16:00:50,283 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS17/SummitData/SummitContinuousBilateralStreaming/RCS17L
+[INFO] 2025-08-11 16:00:50,283 — Processing subject: RCS17R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,284 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS17/SummitData/StarrLab/RCS17R
+[INFO] 2025-08-11 16:00:50,284 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS17/SummitData/SummitContinuousBilateralStreaming/RCS17R
+[INFO] 2025-08-11 16:00:50,284 — Processing subject: RCS18L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,284 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS18/SummitData/StarrLab/RCS18L
+[INFO] 2025-08-11 16:00:50,284 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS18/SummitData/SummitContinuousBilateralStreaming/RCS18L
+[INFO] 2025-08-11 16:00:50,284 — [DRY RUN] Simulating move for 'Session1754921306021' to '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18L/Session1754921306021'
+[INFO] 2025-08-11 16:00:50,522 — [DRY RUN] rsync summary for Session1754921306021:
+    sending incremental file list
+    created directory /media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18L/Session1754921306021
+    ./
+    DeviceNPC700546H/
+    DeviceNPC700546H/AdaptiveLog.json
+    DeviceNPC700546H/DeviceSettings.json
+    DeviceNPC700546H/DiagnosticsLog.json
+    DeviceNPC700546H/ErrorLog.json
+    DeviceNPC700546H/EventLog.json
+    DeviceNPC700546H/RawDataAccel.json
+    DeviceNPC700546H/RawDataFFT.json
+    DeviceNPC700546H/RawDataPower.json
+    DeviceNPC700546H/RawDataTD.json
+    DeviceNPC700546H/StimLog.json
+    DeviceNPC700546H/TimeSync.json
+    DeviceNPC700546H/ConfigLogFiles/
+    DeviceNPC700546H/ConfigLogFiles/000_08_11_2025_07_10_51_AM_adaptive.json
+    DeviceNPC700546H/ConfigLogFiles/000_08_11_2025_07_10_51_AM_sense.json
+    DeviceNPC700546H/LogDataFromLeftUnilateralINS/
+    DeviceNPC700546H/LogDataFromLeftUnilateralINS/2025-11-8_07-09-04MirrorLog.txt
+    DeviceNPC700546H/LogDataFromLeftUnilateralINS/2025-11-8_07-09-55AppLog.txt
+    DeviceNPC700546H/LogDataFromLeftUnilateralINS/2025-11-8_07-10-21EventLog.txt
+    
+    sent 946 bytes  received 261 bytes  2,414.00 bytes/sec
+    total size is 13,677,994  speedup is 11,332.22 (DRY RUN)
+[INFO] 2025-08-11 16:00:50,522 — Processing subject: RCS18R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,523 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS18/SummitData/StarrLab/RCS18R
+[INFO] 2025-08-11 16:00:50,523 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS18/SummitData/SummitContinuousBilateralStreaming/RCS18R
+[INFO] 2025-08-11 16:00:50,523 — [DRY RUN] Simulating move for 'Session1754921340089' to '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18R/Session1754921340089'
+[INFO] 2025-08-11 16:00:50,766 — [DRY RUN] rsync summary for Session1754921340089:
+    sending incremental file list
+    created directory /media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18R/Session1754921340089
+    ./
+    DeviceNPC700569H/
+    DeviceNPC700569H/AdaptiveLog.json
+    DeviceNPC700569H/DeviceSettings.json
+    DeviceNPC700569H/DiagnosticsLog.json
+    DeviceNPC700569H/ErrorLog.json
+    DeviceNPC700569H/EventLog.json
+    DeviceNPC700569H/RawDataAccel.json
+    DeviceNPC700569H/RawDataFFT.json
+    DeviceNPC700569H/RawDataPower.json
+    DeviceNPC700569H/RawDataTD.json
+    DeviceNPC700569H/StimLog.json
+    DeviceNPC700569H/TimeSync.json
+    DeviceNPC700569H/ConfigLogFiles/
+    DeviceNPC700569H/ConfigLogFiles/000_08_11_2025_07_10_51_AM_adaptive.json
+    DeviceNPC700569H/ConfigLogFiles/000_08_11_2025_07_10_51_AM_sense.json
+    DeviceNPC700569H/LogDataFromRightINS/
+    DeviceNPC700569H/LogDataFromRightINS/2025-11-8_07-09-06MirrorLog.txt
+    DeviceNPC700569H/LogDataFromRightINS/2025-11-8_07-09-56AppLog.txt
+    DeviceNPC700569H/LogDataFromRightINS/2025-11-8_07-10-23EventLog.txt
+    
+    sent 946 bytes  received 261 bytes  2,414.00 bytes/sec
+    total size is 13,773,325  speedup is 11,411.21 (DRY RUN)
+[INFO] 2025-08-11 16:00:50,766 — [DRY RUN] Simulating move for 'Session1754921320675' to '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18R/Session1754921320675'
+[INFO] 2025-08-11 16:00:50,841 — [DRY RUN] rsync summary for Session1754921320675:
+    sending incremental file list
+    created directory /media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18R/Session1754921320675
+    ./
+    DeviceNPC700569H/
+    DeviceNPC700569H/AdaptiveLog.json
+    DeviceNPC700569H/DeviceSettings.json
+    DeviceNPC700569H/DiagnosticsLog.json
+    DeviceNPC700569H/ErrorLog.json
+    DeviceNPC700569H/EventLog.json
+    DeviceNPC700569H/RawDataAccel.json
+    DeviceNPC700569H/RawDataFFT.json
+    DeviceNPC700569H/RawDataPower.json
+    DeviceNPC700569H/RawDataTD.json
+    DeviceNPC700569H/StimLog.json
+    DeviceNPC700569H/TimeSync.json
+    
+    sent 570 bytes  received 238 bytes  1,616.00 bytes/sec
+    total size is 2,180  speedup is 2.70 (DRY RUN)
+[INFO] 2025-08-11 16:00:50,841 — Processing subject: RCS19L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,842 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS19/SummitData/StarrLab/RCS19L
+[INFO] 2025-08-11 16:00:50,842 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS19/SummitData/SummitContinuousBilateralStreaming/RCS19L
+[INFO] 2025-08-11 16:00:50,842 — Processing subject: RCS19R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,842 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS19/SummitData/StarrLab/RCS19R
+[INFO] 2025-08-11 16:00:50,842 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS19/SummitData/SummitContinuousBilateralStreaming/RCS19R
+[INFO] 2025-08-11 16:00:50,842 — Processing subject: RCS20L with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,842 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS20/SummitData/StarrLab/RCS20L
+[INFO] 2025-08-11 16:00:50,842 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS20/SummitData/SummitContinuousBilateralStreaming/RCS20L
+[INFO] 2025-08-11 16:00:50,842 — Processing subject: RCS20R with 2 source path(s)
+[INFO] 2025-08-11 16:00:50,842 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS20/SummitData/StarrLab/RCS20R
+[INFO] 2025-08-11 16:00:50,842 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS20/SummitData/SummitContinuousBilateralStreaming/RCS20R
+[INFO] 2025-08-11 16:00:50,843 — 
+[INFO] 2025-08-11 16:00:50,843 — --- Move and Archive script finished. ---
+[INFO] 2025-08-11 16:00:50,843 — 
+[INFO] 2025-08-11 16:29:32,582 — 
+[INFO] 2025-08-11 16:29:32,582 — --- Starting Move and Archive script in DRY RUN mode ---
+[INFO] 2025-08-11 16:29:32,582 — 
+[INFO] 2025-08-11 16:29:32,584 — Found 38 subjects to process
+[INFO] 2025-08-11 16:29:32,584 — Processing subject: RCS01L with 1 source path(s)
+[INFO] 2025-08-11 16:29:32,584 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS01/SummitData/SummitContinuousBilateralStreaming/RCS01L
+[INFO] 2025-08-11 16:29:32,584 — Processing subject: RCS01R with 1 source path(s)
+[INFO] 2025-08-11 16:29:32,584 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS01/SummitData/SummitContinuousBilateralStreaming/RCS01R
+[INFO] 2025-08-11 16:29:32,584 — Processing subject: RCS02L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,584 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RC02LTE/SummitData/StarrLab/RCS02L
+[INFO] 2025-08-11 16:29:32,584 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RC02LTE/SummitData/SummitContinuousBilateralStreaming/RCS02L
+[INFO] 2025-08-11 16:29:32,584 — Processing subject: RCS02R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,584 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RC02LTE/SummitData/StarrLab/RCS02R
+[INFO] 2025-08-11 16:29:32,585 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RC02LTE/SummitData/SummitContinuousBilateralStreaming/RCS02R
+[INFO] 2025-08-11 16:29:32,585 — Processing subject: RCS03L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,585 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS03/SummitData/StarrLab/RCS03L
+[INFO] 2025-08-11 16:29:32,585 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS03/SummitData/SummitContinuousBilateralStreaming/RCS03L
+[INFO] 2025-08-11 16:29:32,585 — Processing subject: RCS03R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,585 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS03/SummitData/StarrLab/RCS03R
+[INFO] 2025-08-11 16:29:32,585 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS03/SummitData/SummitContinuousBilateralStreaming/RCS03R
+[INFO] 2025-08-11 16:29:32,585 — Processing subject: RCS04L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,585 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS04/SummitData/StarrLab/RCS04L
+[INFO] 2025-08-11 16:29:32,585 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS04/SummitData/SummitContinuousBilateralStreaming/RCS04L
+[INFO] 2025-08-11 16:29:32,585 — Processing subject: RCS04R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,585 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS04/SummitData/StarrLab/RCS04R
+[INFO] 2025-08-11 16:29:32,585 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS04/SummitData/SummitContinuousBilateralStreaming/RCS04R
+[INFO] 2025-08-11 16:29:32,585 — Processing subject: RCS05L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,585 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS05/SummitData/StarrLab/RCS05L
+[INFO] 2025-08-11 16:29:32,585 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS05/SummitData/SummitContinuousBilateralStreaming/RCS05L
+[INFO] 2025-08-11 16:29:32,585 — Processing subject: RCS05R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS05/SummitData/StarrLab/RCS05R
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS05/SummitData/SummitContinuousBilateralStreaming/RCS05R
+[INFO] 2025-08-11 16:29:32,586 — Processing subject: RCS06L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS06/SummitData/StarrLab/RCS06L
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS06/SummitData/SummitContinuousBilateralStreaming/RCS06L
+[INFO] 2025-08-11 16:29:32,586 — Processing subject: RCS06R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS06/SummitData/StarrLab/RCS06R
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS06/SummitData/SummitContinuousBilateralStreaming/RCS06R
+[INFO] 2025-08-11 16:29:32,586 — Processing subject: RCS07L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS07/SummitData/StarrLab/RCS07L
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS07/SummitData/SummitContinuousBilateralStreaming/RCS07L
+[INFO] 2025-08-11 16:29:32,586 — Processing subject: RCS07R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS07/SummitData/StarrLab/RCS07R
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS07/SummitData/SummitContinuousBilateralStreaming/RCS07R
+[INFO] 2025-08-11 16:29:32,586 — Processing subject: RCS08L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS08/SummitData/StarrLab/RCS08L
+[INFO] 2025-08-11 16:29:32,586 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS08/SummitData/SummitContinuousBilateralStreaming/RCS08L
+[INFO] 2025-08-11 16:29:32,587 — Processing subject: RCS08R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,587 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS08/SummitData/StarrLab/RCS08R
+[INFO] 2025-08-11 16:29:32,587 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS08/SummitData/SummitContinuousBilateralStreaming/RCS08R
+[INFO] 2025-08-11 16:29:32,587 — Processing subject: RCS09L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,587 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS09/SummitData/StarrLab/RCS09L
+[INFO] 2025-08-11 16:29:32,587 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS09/SummitData/SummitContinuousBilateralStreaming/RCS09L
+[INFO] 2025-08-11 16:29:32,587 — Processing subject: RCS09R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,587 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS09/SummitData/StarrLab/RCS09R
+[INFO] 2025-08-11 16:29:32,587 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS09/SummitData/SummitContinuousBilateralStreaming/RCS09R
+[INFO] 2025-08-11 16:29:32,587 — Processing subject: RCS10L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,587 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS10/SummitData/StarrLab/RCS10L
+[INFO] 2025-08-11 16:29:32,587 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS10/SummitData/SummitContinuousBilateralStreaming/RCS10L
+[INFO] 2025-08-11 16:29:32,587 — Processing subject: RCS10R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,587 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS10/SummitData/StarrLab/RCS10R
+[INFO] 2025-08-11 16:29:32,588 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS10/SummitData/SummitContinuousBilateralStreaming/RCS10R
+[INFO] 2025-08-11 16:29:32,588 — Processing subject: RCS11L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,588 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS11/SummitData/StarrLab/RCS11L
+[INFO] 2025-08-11 16:29:32,588 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS11/SummitData/SummitContinuousBilateralStreaming/RCS11L
+[INFO] 2025-08-11 16:29:32,588 — Processing subject: RCS11R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,588 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS11/SummitData/StarrLab/RCS11R
+[INFO] 2025-08-11 16:29:32,588 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS11/SummitData/SummitContinuousBilateralStreaming/RCS11R
+[INFO] 2025-08-11 16:29:32,588 — Processing subject: RCS12L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,588 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS12/SummitData/StarrLab/RCS12L
+[INFO] 2025-08-11 16:29:32,588 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS12/SummitData/SummitContinuousBilateralStreaming/RCS12L
+[INFO] 2025-08-11 16:29:32,588 — Processing subject: RCS12R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,588 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS12/SummitData/StarrLab/RCS12R
+[INFO] 2025-08-11 16:29:32,588 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS12/SummitData/SummitContinuousBilateralStreaming/RCS12R
+[INFO] 2025-08-11 16:29:32,589 — Processing subject: RCS13R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,589 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS13/SummitData/StarrLab/RCS13R
+[INFO] 2025-08-11 16:29:32,589 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS13/SummitData/SummitContinuousBilateralStreaming/RCS13R
+[INFO] 2025-08-11 16:29:32,589 — Processing subject: RCS14L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,589 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS14/SummitData/StarrLab/RCS14L
+[INFO] 2025-08-11 16:29:32,589 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS14/SummitData/SummitContinuousBilateralStreaming/RCS14L
+[INFO] 2025-08-11 16:29:32,589 — Processing subject: RCS15L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,589 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS15/SummitData/StarrLab/RCS15L
+[INFO] 2025-08-11 16:29:32,589 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS15/SummitData/SummitContinuousBilateralStreaming/RCS15L
+[INFO] 2025-08-11 16:29:32,589 — Processing subject: RCS15R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,589 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS15/SummitData/StarrLab/RCS15R
+[INFO] 2025-08-11 16:29:32,590 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS15/SummitData/SummitContinuousBilateralStreaming/RCS15R
+[INFO] 2025-08-11 16:29:32,590 — Processing subject: RCS16L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,590 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS16/SummitData/StarrLab/RCS16L
+[INFO] 2025-08-11 16:29:32,590 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS16/SummitData/SummitContinuousBilateralStreaming/RCS16L
+[INFO] 2025-08-11 16:29:32,590 — Processing subject: RCS16R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,590 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS16/SummitData/StarrLab/RCS16R
+[INFO] 2025-08-11 16:29:32,590 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS16/SummitData/SummitContinuousBilateralStreaming/RCS16R
+[INFO] 2025-08-11 16:29:32,590 — Processing subject: RCS17L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,590 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS17/SummitData/StarrLab/RCS17L
+[INFO] 2025-08-11 16:29:32,590 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS17/SummitData/SummitContinuousBilateralStreaming/RCS17L
+[INFO] 2025-08-11 16:29:32,590 — Processing subject: RCS17R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,590 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS17/SummitData/StarrLab/RCS17R
+[INFO] 2025-08-11 16:29:32,590 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS17/SummitData/SummitContinuousBilateralStreaming/RCS17R
+[INFO] 2025-08-11 16:29:32,590 — Processing subject: RCS18L with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,590 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS18/SummitData/StarrLab/RCS18L
+[INFO] 2025-08-11 16:29:32,590 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS18/SummitData/SummitContinuousBilateralStreaming/RCS18L
+[INFO] 2025-08-11 16:29:32,591 — [DRY RUN] Simulating move for 'Session1754921306021' to '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18L/Session1754921306021'
+[INFO] 2025-08-11 16:29:32,809 — [DRY RUN] rsync summary for Session1754921306021:
+    sending incremental file list
+    created directory /media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18L/Session1754921306021
+    ./
+    DeviceNPC700546H/
+    DeviceNPC700546H/AdaptiveLog.json
+    DeviceNPC700546H/DeviceSettings.json
+    DeviceNPC700546H/DiagnosticsLog.json
+    DeviceNPC700546H/ErrorLog.json
+    DeviceNPC700546H/EventLog.json
+    DeviceNPC700546H/RawDataAccel.json
+    DeviceNPC700546H/RawDataFFT.json
+    DeviceNPC700546H/RawDataPower.json
+    DeviceNPC700546H/RawDataTD.json
+    DeviceNPC700546H/StimLog.json
+    DeviceNPC700546H/TimeSync.json
+    DeviceNPC700546H/ConfigLogFiles/
+    DeviceNPC700546H/ConfigLogFiles/000_08_11_2025_07_10_51_AM_adaptive.json
+    DeviceNPC700546H/ConfigLogFiles/000_08_11_2025_07_10_51_AM_sense.json
+    DeviceNPC700546H/LogDataFromLeftUnilateralINS/
+    DeviceNPC700546H/LogDataFromLeftUnilateralINS/2025-11-8_07-09-04MirrorLog.txt
+    DeviceNPC700546H/LogDataFromLeftUnilateralINS/2025-11-8_07-09-55AppLog.txt
+    DeviceNPC700546H/LogDataFromLeftUnilateralINS/2025-11-8_07-10-21EventLog.txt
+    
+    sent 946 bytes  received 261 bytes  2,414.00 bytes/sec
+    total size is 13,677,994  speedup is 11,332.22 (DRY RUN)
+[INFO] 2025-08-11 16:29:32,809 — Processing subject: RCS18R with 2 source path(s)
+[INFO] 2025-08-11 16:29:32,809 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS18/SummitData/StarrLab/RCS18R
+[INFO] 2025-08-11 16:29:32,809 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS18/SummitData/SummitContinuousBilateralStreaming/RCS18R
+[INFO] 2025-08-11 16:29:32,819 — [DRY RUN] Simulating move for 'Session1754921340089' to '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18R/Session1754921340089'
+[INFO] 2025-08-11 16:29:33,052 — [DRY RUN] rsync summary for Session1754921340089:
+    sending incremental file list
+    created directory /media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18R/Session1754921340089
+    ./
+    DeviceNPC700569H/
+    DeviceNPC700569H/AdaptiveLog.json
+    DeviceNPC700569H/DeviceSettings.json
+    DeviceNPC700569H/DiagnosticsLog.json
+    DeviceNPC700569H/ErrorLog.json
+    DeviceNPC700569H/EventLog.json
+    DeviceNPC700569H/RawDataAccel.json
+    DeviceNPC700569H/RawDataFFT.json
+    DeviceNPC700569H/RawDataPower.json
+    DeviceNPC700569H/RawDataTD.json
+    DeviceNPC700569H/StimLog.json
+    DeviceNPC700569H/TimeSync.json
+    DeviceNPC700569H/ConfigLogFiles/
+    DeviceNPC700569H/ConfigLogFiles/000_08_11_2025_07_10_51_AM_adaptive.json
+    DeviceNPC700569H/ConfigLogFiles/000_08_11_2025_07_10_51_AM_sense.json
+    DeviceNPC700569H/LogDataFromRightINS/
+    DeviceNPC700569H/LogDataFromRightINS/2025-11-8_07-09-06MirrorLog.txt
+    DeviceNPC700569H/LogDataFromRightINS/2025-11-8_07-09-56AppLog.txt
+    DeviceNPC700569H/LogDataFromRightINS/2025-11-8_07-10-23EventLog.txt
+    
+    sent 946 bytes  received 261 bytes  804.67 bytes/sec
+    total size is 13,773,325  speedup is 11,411.21 (DRY RUN)
+[INFO] 2025-08-11 16:29:33,053 — [DRY RUN] Simulating move for 'Session1754921320675' to '/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18R/Session1754921320675'
+[INFO] 2025-08-11 16:29:33,127 — [DRY RUN] rsync summary for Session1754921320675:
+    sending incremental file list
+    created directory /media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS18 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS18R/Session1754921320675
+    ./
+    DeviceNPC700569H/
+    DeviceNPC700569H/AdaptiveLog.json
+    DeviceNPC700569H/DeviceSettings.json
+    DeviceNPC700569H/DiagnosticsLog.json
+    DeviceNPC700569H/ErrorLog.json
+    DeviceNPC700569H/EventLog.json
+    DeviceNPC700569H/RawDataAccel.json
+    DeviceNPC700569H/RawDataFFT.json
+    DeviceNPC700569H/RawDataPower.json
+    DeviceNPC700569H/RawDataTD.json
+    DeviceNPC700569H/StimLog.json
+    DeviceNPC700569H/TimeSync.json
+    
+    sent 570 bytes  received 238 bytes  1,616.00 bytes/sec
+    total size is 2,180  speedup is 2.70 (DRY RUN)
+[INFO] 2025-08-11 16:29:33,128 — Processing subject: RCS19L with 2 source path(s)
+[INFO] 2025-08-11 16:29:33,128 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS19/SummitData/StarrLab/RCS19L
+[INFO] 2025-08-11 16:29:33,128 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS19/SummitData/SummitContinuousBilateralStreaming/RCS19L
+[INFO] 2025-08-11 16:29:33,129 — Processing subject: RCS19R with 2 source path(s)
+[INFO] 2025-08-11 16:29:33,129 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS19/SummitData/StarrLab/RCS19R
+[INFO] 2025-08-11 16:29:33,129 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS19/SummitData/SummitContinuousBilateralStreaming/RCS19R
+[INFO] 2025-08-11 16:29:33,129 — Processing subject: RCS20L with 2 source path(s)
+[INFO] 2025-08-11 16:29:33,129 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS20/SummitData/StarrLab/RCS20L
+[INFO] 2025-08-11 16:29:33,129 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS20/SummitData/SummitContinuousBilateralStreaming/RCS20L
+[INFO] 2025-08-11 16:29:33,130 — Processing subject: RCS20R with 2 source path(s)
+[INFO] 2025-08-11 16:29:33,130 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS20/SummitData/StarrLab/RCS20R
+[INFO] 2025-08-11 16:29:33,130 —   Processing source path: /media/dropbox_hdd/Starr Lab Dropbox/RCS20/SummitData/SummitContinuousBilateralStreaming/RCS20R
+[INFO] 2025-08-11 16:29:33,130 — 
+[INFO] 2025-08-11 16:29:33,130 — --- Move and Archive script finished. ---
+[INFO] 2025-08-11 16:29:33,130 — 
