@@ -12,11 +12,12 @@ cd $database_dir
 #conda deactivate
 
 # Moves session data from synced to unsynced
-cd /usr/local/MATLAB/R2022a/bin
-./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
-./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
+# cd /usr/local/MATLAB/R2022a/bin
+# ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
+# ./matlab -nodisplay -nodesktop -logfile "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/database/logs/logfile.log" -batch "run /home/starrlab/bin/code/rcs-database/code/move_and_delete_folders.m"
+# Updated to a python based mover
+/home/starrlab/miniconda3/envs/db_env/bin/python3 ./move_and_archive.py
 
-sleep 15m
 
 # # This line was used for databasing demo in lab meeting 04/19/22
 # #mv "/media/dropbox_hdd/Starr Lab Dropbox/juan_testing/Clay_database_test/RCS13R/"* "/media/dropbox_hdd/Starr Lab Dropbox/RC+S Patient Un-Synced Data/RCS13 Un-Synced Data/SummitData/SummitContinuousBilateralStreaming/RCS13R/"
