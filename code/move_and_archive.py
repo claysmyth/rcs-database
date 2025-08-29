@@ -28,6 +28,7 @@ Configuration:
 import logging
 import subprocess
 import argparse  # Added for command-line argument handling
+import shutil
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -218,11 +219,11 @@ def move_session_data(src_session: Path, dest_session: Path, dry_run: bool):
         if not dry_run:
             # After a successful checksum-verified move, the source directory should be empty.
             try:
-                logging.info(f"Removing empty source directory: {src_session}")
-                src_session.rmdir()
+                logging.info(f"Removing source directory and any remaining empty subdirectories: {src_session}")
+                shutil.rmtree(src_session)
             except OSError as e:
-                logging.warning(f"Could not remove source directory {src_session}, it may not be empty. Error: {e}")
-
+                logging.warning(f"Could not remove source directory {src_session}. Error: {e}")
+                
     except subprocess.CalledProcessError as e:
         # This block will be entered if rsync returns a non-zero exit code (an error).
         logging.error(f"rsync command failed for {src_session.name}.")
